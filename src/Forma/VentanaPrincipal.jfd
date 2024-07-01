@@ -19,9 +19,14 @@ new FormModel {
 					name: "menu3"
 					"text": "Insertar"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "iMenuMaterial"
-						"text": "Material"
+						name: "iMenuMaterialEntrada"
+						"text": "MaterialEntrada"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMaterial", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuMaterialSalida"
+						"text": "MaterialSalida"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMaterialSalida", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "iMenuGastos"

@@ -10,11 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Consultas {
+public class Insertar {
     private String parametro1;
     private String parametro2;
-    private String parametro3;
-
     private AppLogs objLogs = new AppLogs(Consultas.class);
 
     public void setParametro1(String parametro1) {
@@ -24,13 +22,9 @@ public class Consultas {
     public void setParametro2(String parametro2) {
         this.parametro2 = parametro2;
     }
-    public void setParametro3(String parametro3) {
-        this.parametro3 = parametro3;
-    }
-
 
     public DefaultTableModel consultas() {
-        String titulo []={"No InsertarMaterialEntrada","Nombre Cliente", "Total"};
+        String titulo []={"No Factura","Nombre Cliente", "Total"};
         DefaultTableModel consulta = new DefaultTableModel(null,titulo);
         String sql="SELECT a.num_factura, b.nombre,SUM(c.cantidad * c.precio) AS total ";
         sql+="FROM facturas AS a ";

@@ -1,38 +1,23 @@
 /*
- * Created by JFormDesigner on Thu Jun 20 10:46:54 EST 2024
+ * Created by JFormDesigner on Sun Jun 30 23:57:31 GMT-05:00 2024
  */
 
 package Forma;
-
-import DBConsultas.Consultas;
 
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
 /**
- * @author JoseChiru
+ * @author pancho
  */
-public class InsertarMaterialEntrada extends JPanel {
-    public InsertarMaterialEntrada() {
+public class InsertarMaterialSalida extends JPanel {
+    public InsertarMaterialSalida() {
         initComponents();
     }
 
     private void button1(ActionEvent e) {
         // TODO add your code here
-        if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
-            Consultas objConsulta = new Consultas();
-            objConsulta.setParametro1(textField1.getText());
-            objConsulta.setParametro2(textField2.getText());
-            objConsulta.setParametro3(textField3.getText());
-            tblResp.setModel(objConsulta.consultas());
-        }else{
-           impresionDialogo("El campo esta en blanco ","Sin Datos",1);
-        }
-    }
-
-    private void impresionDialogo(String mensaje, String titulo, int icono) {
-        JOptionPane.showMessageDialog(null, mensaje, titulo, icono); // Mostrar un cuadro de diálogo
     }
 
     private void initComponents() {
@@ -49,12 +34,13 @@ public class InsertarMaterialEntrada extends JPanel {
 
         //======== panel1 ========
         {
-            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
-            border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border.TitledBorder.CENTER
-            ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dialo\u0067",java.awt.Font
-            .BOLD,12),java.awt.Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(
-            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072"
-            .equals(e.getPropertyName()))throw new RuntimeException();}});
+            panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
+            . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing
+            . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
+            Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
+            ) ,panel1. getBorder( )) ); panel1. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
+            public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName (
+            ) )) throw new RuntimeException( ); }} );
 
             //---- label2 ----
             label2.setText("Hora");

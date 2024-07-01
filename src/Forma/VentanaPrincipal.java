@@ -152,6 +152,14 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
+    private void iMenuMaterialSalida(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new InsertarMaterialSalida());
+        frame.setVisible(true);
+        frame.pack();    
+    }
+
 
 
     private void initComponents() {
@@ -160,7 +168,8 @@ public class VentanaPrincipal extends JPanel {
         button1 = new JButton();
         menuBar1 = new JMenuBar();
         menu3 = new JMenu();
-        iMenuMaterial = new JMenuItem();
+        iMenuMaterialEntrada = new JMenuItem();
+        iMenuMaterialSalida = new JMenuItem();
         iMenuGastos = new JMenuItem();
         iMenuGanancias = new JMenuItem();
         iMenuPiezas = new JMenuItem();
@@ -178,11 +187,13 @@ public class VentanaPrincipal extends JPanel {
         cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
-        0, 0 ,0 , 0) ,  "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
-        . BOTTOM, new java. awt .Font ( "Dialo\u0067", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
-        red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
-        beans. PropertyChangeEvent e) { if( "borde\u0072" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
+        javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax
+        . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
+        .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans.
+        PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .
+        equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- button1 ----
         button1.setText("Conectarse a la base de datos");
@@ -195,10 +206,15 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu3.setText("Insertar");
 
-                //---- iMenuMaterial ----
-                iMenuMaterial.setText("Material");
-                iMenuMaterial.addActionListener(e -> iMenuMaterial(e));
-                menu3.add(iMenuMaterial);
+                //---- iMenuMaterialEntrada ----
+                iMenuMaterialEntrada.setText("MaterialEntrada");
+                iMenuMaterialEntrada.addActionListener(e -> iMenuMaterial(e));
+                menu3.add(iMenuMaterialEntrada);
+
+                //---- iMenuMaterialSalida ----
+                iMenuMaterialSalida.setText("MaterialSalida");
+                iMenuMaterialSalida.addActionListener(e -> iMenuMaterialSalida(e));
+                menu3.add(iMenuMaterialSalida);
 
                 //---- iMenuGastos ----
                 iMenuGastos.setText("Gastos");
@@ -309,7 +325,8 @@ public class VentanaPrincipal extends JPanel {
     private JButton button1;
     private JMenuBar menuBar1;
     private JMenu menu3;
-    private JMenuItem iMenuMaterial;
+    private JMenuItem iMenuMaterialEntrada;
+    private JMenuItem iMenuMaterialSalida;
     private JMenuItem iMenuGastos;
     private JMenuItem iMenuGanancias;
     private JMenuItem iMenuPiezas;
