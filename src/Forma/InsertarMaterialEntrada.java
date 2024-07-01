@@ -47,14 +47,12 @@ public class InsertarMaterialEntrada extends JPanel {
 
         //======== panel1 ========
         {
-            panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder (
-            new javax . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn"
-            , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
-            , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 )
-            ,java . awt. Color .red ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener(
-            new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
-            ) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( )
-            ;} } );
+            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
+            border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border.TitledBorder.CENTER
+            ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dialo\u0067",java.awt.Font
+            .BOLD,12),java.awt.Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(
+            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072"
+            .equals(e.getPropertyName()))throw new RuntimeException();}});
 
             //---- label2 ----
             label2.setText("Hora");
@@ -74,9 +72,9 @@ public class InsertarMaterialEntrada extends JPanel {
             panel1Layout.setHorizontalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addGroup(panel1Layout.createParallelGroup()
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
                                 .addGroup(panel1Layout.createParallelGroup()
                                     .addComponent(label4)
                                     .addGroup(panel1Layout.createSequentialGroup()
@@ -86,18 +84,18 @@ public class InsertarMaterialEntrada extends JPanel {
                                             .addComponent(label3))))
                                 .addGap(18, 18, 18)
                                 .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                    .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                    .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)))
+                                    .addComponent(textField3)
+                                    .addComponent(textField2)
+                                    .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(96, 96, 96)
+                                .addGap(74, 74, 74)
                                 .addComponent(button1)))
-                        .addContainerGap(56, Short.MAX_VALUE))
+                        .addContainerGap(55, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+                        .addGap(38, 38, 38)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addComponent(label2))
@@ -111,7 +109,7 @@ public class InsertarMaterialEntrada extends JPanel {
                             .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(button1)
-                        .addContainerGap(37, Short.MAX_VALUE))
+                        .addContainerGap(45, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
