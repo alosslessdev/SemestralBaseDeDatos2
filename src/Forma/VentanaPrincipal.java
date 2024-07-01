@@ -35,7 +35,7 @@ public class VentanaPrincipal extends JPanel {
     private void iMenuMaterial(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame();
-        frame.setContentPane(new InsertarMaterial());
+        frame.setContentPane(new InsertarMaterialEntrada());
         frame.setVisible(true);
         frame.pack();
     }

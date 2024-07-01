@@ -13,14 +13,14 @@ import javax.swing.GroupLayout;
 /**
  * @author JoseChiru
  */
-public class InsertarMaterial extends JPanel {
-    public InsertarMaterial() {
+public class InsertarMaterialEntrada extends JPanel {
+    public InsertarMaterialEntrada() {
         initComponents();
     }
 
     private void button1(ActionEvent e) {
         // TODO add your code here
-        if (!jTextFecha.getText().equals("")) {
+        if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
             Consultas objConsulta = new Consultas();
             objConsulta.setParametro1(jTextFecha.getText());
             tblResp.setModel(objConsulta.consultas());
@@ -37,9 +37,6 @@ public class InsertarMaterial extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - sdf ads
         panel1 = new JPanel();
-        label1 = new JLabel();
-        radioButton1 = new JRadioButton();
-        radioButton2 = new JRadioButton();
         label2 = new JLabel();
         textField1 = new JTextField();
         label3 = new JLabel();
@@ -50,22 +47,14 @@ public class InsertarMaterial extends JPanel {
 
         //======== panel1 ========
         {
-            panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
-            . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing
-            .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
-            Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
-            ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
-            public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName (
-            ) ) )throw new RuntimeException( ) ;} } );
-
-            //---- label1 ----
-            label1.setText("Tipo:");
-
-            //---- radioButton1 ----
-            radioButton1.setText("Entrada");
-
-            //---- radioButton2 ----
-            radioButton2.setText("Salida");
+            panel1.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder (
+            new javax . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn"
+            , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
+            , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 )
+            ,java . awt. Color .red ) ,panel1. getBorder () ) ); panel1. addPropertyChangeListener(
+            new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
+            ) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( )
+            ;} } );
 
             //---- label2 ----
             label2.setText("Hora");
@@ -89,25 +78,17 @@ public class InsertarMaterial extends JPanel {
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
                                 .addGroup(panel1Layout.createParallelGroup()
+                                    .addComponent(label4)
                                     .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(label1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radioButton1)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(radioButton2))
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGroup(panel1Layout.createParallelGroup()
-                                            .addComponent(label4)
-                                            .addGroup(panel1Layout.createSequentialGroup()
-                                                .addGap(67, 67, 67)
-                                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(label2)
-                                                    .addComponent(label3))))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                            .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                            .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)))))
+                                        .addGap(67, 67, 67)
+                                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                            .addComponent(label2)
+                                            .addComponent(label3))))
+                                .addGap(18, 18, 18)
+                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                    .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                    .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)))
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(96, 96, 96)
                                 .addComponent(button1)))
@@ -116,12 +97,7 @@ public class InsertarMaterial extends JPanel {
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(label1)
-                            .addComponent(radioButton1)
-                            .addComponent(radioButton2))
-                        .addGap(18, 18, 18)
+                        .addGap(71, 71, 71)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addComponent(label2))
@@ -144,9 +120,6 @@ public class InsertarMaterial extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     // Generated using JFormDesigner Evaluation license - sdf ads
     private JPanel panel1;
-    private JLabel label1;
-    private JRadioButton radioButton1;
-    private JRadioButton radioButton2;
     private JLabel label2;
     private JTextField textField1;
     private JLabel label3;

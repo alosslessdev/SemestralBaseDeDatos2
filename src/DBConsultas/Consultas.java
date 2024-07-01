@@ -24,7 +24,7 @@ public class Consultas {
     }
 
     public DefaultTableModel consultas() {
-        String titulo []={"No InsertarMaterial","Nombre Cliente", "Total"};
+        String titulo []={"No InsertarMaterialEntrada","Nombre Cliente", "Total"};
         DefaultTableModel consulta = new DefaultTableModel(null,titulo);
         String sql="SELECT a.num_factura, b.nombre,SUM(c.cantidad * c.precio) AS total ";
         sql+="FROM facturas AS a ";
