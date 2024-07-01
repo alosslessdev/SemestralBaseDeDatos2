@@ -5,6 +5,7 @@
 package Forma;
 
 import DBConsultas.Consultas;
+import DBConsultas.Insertar;
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -21,13 +22,12 @@ public class InsertarMaterialEntrada extends JPanel {
     private void button1(ActionEvent e) {
         // TODO add your code here
         if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
-            Consultas objConsulta = new Consultas();
-            objConsulta.setParametro1(textField1.getText());
-            objConsulta.setParametro2(textField2.getText());
-            objConsulta.setParametro3(textField3.getText());
-            tblResp.setModel(objConsulta.consultas());
+            Insertar objInsertar = new Insertar();
+            objInsertar.setParametro1(textField1.getText());
+            objInsertar.setParametro2(textField2.getText());
+            objInsertar.setParametro3(textField3.getText());
         }else{
-           impresionDialogo("El campo esta en blanco ","Sin Datos",1);
+           impresionDialogo("Uno o mas campos estan en blanco ","Error",1);
         }
     }
 
@@ -49,12 +49,12 @@ public class InsertarMaterialEntrada extends JPanel {
 
         //======== panel1 ========
         {
-            panel1.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
-            border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border.TitledBorder.CENTER
-            ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dialo\u0067",java.awt.Font
-            .BOLD,12),java.awt.Color.red),panel1. getBorder()));panel1. addPropertyChangeListener(
-            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072"
-            .equals(e.getPropertyName()))throw new RuntimeException();}});
+            panel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
+            ( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing. border
+            . TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt
+            . Color. red) ,panel1. getBorder( )) ); panel1. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
+            propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( )
+            ; }} );
 
             //---- label2 ----
             label2.setText("Hora");
@@ -63,7 +63,7 @@ public class InsertarMaterialEntrada extends JPanel {
             label3.setText("Peso");
 
             //---- label4 ----
-            label4.setText("Origen o destino");
+            label4.setText("Origen");
 
             //---- button1 ----
             button1.setText("Insertar");
@@ -77,32 +77,29 @@ public class InsertarMaterialEntrada extends JPanel {
                         .addGap(23, 23, 23)
                         .addGroup(panel1Layout.createParallelGroup()
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGroup(panel1Layout.createParallelGroup()
+                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label3)
                                     .addComponent(label4)
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGap(67, 67, 67)
-                                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                            .addComponent(label2)
-                                            .addComponent(label3))))
+                                    .addComponent(label2))
                                 .addGap(18, 18, 18)
                                 .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textField3)
                                     .addComponent(textField2)
-                                    .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(textField1)
+                                    .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 162, GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
                                 .addComponent(button1)))
-                        .addContainerGap(55, Short.MAX_VALUE))
+                        .addContainerGap(30, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label2))
+                            .addComponent(label2)
+                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                             .addComponent(label3)
                             .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)

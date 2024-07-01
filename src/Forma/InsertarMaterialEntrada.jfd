@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:23:p, par l {seq l {par l {comp label4::l:p::p, seq l {space :p:67:p, par t {comp label2:::p::p, comp label3:::p::p}}}, space s:::p, par l:::p {comp textField3:::::x, comp textField2:::::x, comp textField1:::p:74:p}}, seq l {space :p:74:p, comp button1:::p::p}}, space ::55:x}}"
-			"$verticalGroup": "par l {seq l {space :p:38:p, par b {comp textField1::b:p::p, comp label2::b:p::p}, space :p:18:p, par b {comp label3::b:p::p, comp textField2::b:p::p}, space u:::p, par b {comp label4::b:p::p, comp textField3::b:p::p}, space :::p, comp button1:::p::p, space ::45:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:23:p, par l {seq l {par t {comp label3:::p::p, comp label4:::p::p, comp label2:::p::p}, space s:::p, par l:::p {comp textField2:::::x, comp textField1:::::x, comp textField3::l:p:162:p}}, seq l {space :p:74:p, comp button1:::p::p}}, space ::30:x}}"
+			"$verticalGroup": "par l {seq l {space :p:38:p, par b {comp label2::b:p::p, comp textField1::b:p::p}, space :p:18:p, par t {comp label3:::p::p, comp textField2:::p::p}, space u:::p, par b {comp label4::b:p::p, comp textField3::b:p::p}, space :::p, comp button1:::p::p, space ::45:x}}"
 		} ) {
 			name: "panel1"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -24,7 +24,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
-				"text": "Origen o destino"
+				"text": "Origen"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField3"
