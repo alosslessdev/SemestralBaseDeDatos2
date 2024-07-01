@@ -10,7 +10,7 @@ new FormModel {
 			name: "panel1"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "Hora"
+				"text": "Tipo"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField1"

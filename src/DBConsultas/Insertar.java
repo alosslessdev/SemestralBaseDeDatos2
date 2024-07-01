@@ -14,6 +14,9 @@ public class Insertar {
     private String parametro1;
     private String parametro2;
     private String parametro3;
+    private String parametro4;
+    private String parametro5;
+
 
     private AppLogs objLogs = new AppLogs(Consultas.class);
 
@@ -26,6 +29,13 @@ public class Insertar {
     public void setParametro3(String parametro3) {
         this.parametro3 = parametro3;
     }
+    public void setParametro4(String parametro3) {
+        this.parametro4 = parametro3;
+    }
+    public void setParametro5(String parametro3) {
+        this.parametro5 = parametro3;
+    }
+
 
     public DefaultTableModel consultas() {
         String titulo []={"No Factura","Nombre Cliente", "Total"};
@@ -45,6 +55,10 @@ public class Insertar {
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);
                 pst.setString(1, parametro1);
+                pst.setString(2, parametro2);
+                pst.setString(3, parametro3);
+                pst.setString(4, parametro4);
+                pst.setString(5, parametro5);
                 try(ResultSet resultado = pst.executeQuery()){
                     resultado.last();
                     int filas = resultado.getRow();
