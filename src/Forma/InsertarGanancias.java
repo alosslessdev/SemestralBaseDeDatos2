@@ -46,7 +46,7 @@ public class InsertarGanancias extends JPanel {
         radioButton2.setText("Salida");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Insertar3");
         button1.addActionListener(e -> button1(e));
 
         GroupLayout layout = new GroupLayout(this);

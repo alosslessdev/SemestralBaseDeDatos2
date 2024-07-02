@@ -10,12 +10,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Consultas {
+public class Consultas3 {
     private String parametro1;
     private String parametro2;
     private String parametro3;
 
-    private AppLogs objLogs = new AppLogs(Consultas.class);
+    private AppLogs objLogs = new AppLogs(Consultas3.class);
 
     public void setParametro1(String parametro1) {
         this.parametro1 = parametro1;

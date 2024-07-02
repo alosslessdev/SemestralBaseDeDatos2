@@ -4,15 +4,10 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:55:p, comp button1:::p:199:p, space ::46:x}, seq t {space ::90:x, comp menuBar1:::p::p, space :p:76:p}}"
-			"$verticalGroup": "par l {seq t {space :::p, comp button1:::p:46:p, space s:::p, comp menuBar1:::p:52:p, space ::98:x}}"
+			"$horizontalGroup": "par l {seq t {space ::90:x, comp menuBar1:::p::p, space :p:76:p}}"
+			"$verticalGroup": "par l {seq t {space :p:70:p, comp menuBar1:::p:52:p, space ::98:x}}"
 		} ) {
 			name: "this"
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "Conectarse a la base de datos"
-				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
-			} )
 			add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 				name: "menuBar1"
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {

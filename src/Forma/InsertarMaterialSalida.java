@@ -47,7 +47,7 @@ public class InsertarMaterialSalida extends JPanel {
         label5.setText("Origen");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Insertar3");
         button1.addActionListener(e -> button1(e));
 
         //---- label6 ----

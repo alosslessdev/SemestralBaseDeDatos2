@@ -70,7 +70,7 @@ public class InsertarMantenimiento extends JPanel {
         label5.setText("CodigoPieza");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Insertar3");
         button1.addActionListener(e -> button1(e));
 
         //---- label6 ----

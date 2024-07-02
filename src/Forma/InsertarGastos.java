@@ -4,13 +4,14 @@
 
 package Forma;
 
+import DBConsultas.Insertar3;
+import DBConsultas.Insertar4;
+
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
-/**
- * @author Jose Chiru
- */
+
 public class InsertarGastos extends JPanel {
     public InsertarGastos() {
         initComponents();
@@ -18,6 +19,27 @@ public class InsertarGastos extends JPanel {
 
     private void button1(ActionEvent e) {
         // TODO add your code here
+        if (!textField1.getText().equals("") && !textField2.getText().equals("") && 
+                !textField3.getText().equals("") &&
+                !textField4.getText().equals("")) {
+            Insertar4 objInsertar4 = new Insertar4();
+            objInsertar4.setParametroString(
+                    "insert into Gastos (EnergiaElectrica, Mantenimiento, IDGerente, Mes) " +
+                            "values (?, ?, ?, ?)");
+            if (textField1.getText().equals()){
+
+            }
+            objInsertar4.setParametro1(textField1.getText());
+            objInsertar4.setParametro2(textField2.getText());
+            objInsertar4.setParametro3(textField3.getText());
+            objInsertar4.setParametro4(textField4.getText());
+            objInsertar4.insertar();
+            JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Uno o mas campos estan en blanco ","Error",1);
+
+        }
     }
 
     private void initComponents() {
@@ -29,17 +51,18 @@ public class InsertarGastos extends JPanel {
         textField2 = new JTextField();
         button1 = new JButton();
         label6 = new JLabel();
-        textField3 = new JTextField();
         label7 = new JLabel();
+        textField3 = new JTextField();
         textField4 = new JTextField();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
-        ( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing. border
-        . TitledBorder. BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt
-        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
-        propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName () )) throw new RuntimeException( )
-        ; }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax.
+        swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border
+        . TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog"
+        ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder
+        ( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java
+        .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException
+        ( ); }} );
 
         //---- label4 ----
         label4.setText("IDGerente");
@@ -63,51 +86,50 @@ public class InsertarGastos extends JPanel {
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(44, 44, 44)
-                            .addGroup(layout.createParallelGroup()
-                                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(label4)
-                                        .addComponent(label5))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(textField2)
-                                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(81, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup()
+                                    .addComponent(label4, GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label5, GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup()
+                                    .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                     .addComponent(label6)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(label7))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup()
+                                    .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                                    .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(156, 156, 156)
-                            .addComponent(button1))
-                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(label7)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(32, Short.MAX_VALUE))
+                            .addComponent(button1)))
+                    .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(32, 32, 32)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addGap(40, 40, 40)
+                    .addGroup(layout.createParallelGroup()
                         .addComponent(label6)
-                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label7))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label4)
                         .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label5))
-                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label7)
+                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4))
+                    .addGap(21, 21, 21)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label5)
+                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(button1)
                     .addGap(38, 38, 38))
         );
@@ -122,8 +144,8 @@ public class InsertarGastos extends JPanel {
     private JTextField textField2;
     private JButton button1;
     private JLabel label6;
-    private JTextField textField3;
     private JLabel label7;
+    private JTextField textField3;
     private JTextField textField4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

@@ -4,8 +4,7 @@
 
 package Forma;
 
-import DBConsultas.Consultas;
-import DBConsultas.Insertar;
+import DBConsultas.Insertar3;
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -19,14 +18,14 @@ public class InsertarMaterialEntrada extends JPanel {
     private void button1(ActionEvent e) {
         // TODO add your code here
         if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
-            Insertar objInsertar = new Insertar();
-            objInsertar.setParametro5(
+            Insertar3 objInsertar3 = new Insertar3();
+            objInsertar3.setParametroString(
                     "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
                             "values (?, ?, ?, convert(varchar(10), GETDATE(), 108), GETDATE()) ");
-            objInsertar.setParametro1(textField1.getText());
-            objInsertar.setParametro2(textField2.getText());
-            objInsertar.setParametro3(textField3.getText());
-            objInsertar.insertar();
+            objInsertar3.setParametro1(textField1.getText());
+            objInsertar3.setParametro2(textField2.getText());
+            objInsertar3.setParametro3(textField3.getText());
+            objInsertar3.insertar();
             JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
 
         }else{
@@ -62,7 +61,7 @@ public class InsertarMaterialEntrada extends JPanel {
         label5.setText("Origen");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Insertar3");
         button1.addActionListener(e -> button1(e));
 
         //---- label6 ----

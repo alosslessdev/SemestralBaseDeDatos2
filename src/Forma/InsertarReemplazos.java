@@ -47,7 +47,7 @@ public class InsertarReemplazos extends JPanel {
         label2.setText("CodigoMaquina");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Insertar3");
         button1.addActionListener(e -> button1(e));
 
         GroupLayout layout = new GroupLayout(this);

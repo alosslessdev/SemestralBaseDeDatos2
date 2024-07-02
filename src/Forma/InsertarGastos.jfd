@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :p:44:p, par l {seq t {par t {comp label4:::p::p, comp label5:::p::p}, space s:::p, par l:::p {comp textField2:::::x, comp textField1:::p:202:p}}, seq t {comp label6:::p::p, space s:::p, comp textField3:::p:202:p}}}, seq l {space :p:156:p, comp button1:::p::p}, seq t {space :::p, comp label7:::p::p, space s:::p, comp textField4:::p:202:p}}, space ::32:x}}"
-			"$verticalGroup": "par l {seq l {space :p:32:p, par b {comp label6::b:p::p, comp textField3::b:p::p}, space s:::p, par b {comp textField4::b:p::p, comp label7::b:p::p}, space :::x, par b {comp label4::b:p::p, comp textField1::b:p::p}, space s:::p, par b {comp textField2::b:p::p, comp label5::b:p::p}, space s:::p, comp button1:::p::p, space :p:38:p}}"
+			"$horizontalGroup": "par l {seq {par l {par l {seq {space ::81:x, par l {comp label4::t:p::p, comp label5::t:p::p}, space u:::p, par l {comp textField3:::p:202:p, comp textField4:::p:202:p}}, seq {space :p:44:p, par t {comp label6:::p::p, comp label7:::p::p}, space :::p, par l {comp textField2::::205:x, comp textField1::::205:x}}}, seq l {space :p:156:p, comp button1:::p::p}}, space :p:44:p}}"
+			"$verticalGroup": "par l {seq l {space :p:40:p, par l {comp label6:::p::p, comp textField1:::p::p}, space s:::p, par l {comp label7:::p::p, comp textField2:::p::p}, space u:::p, par l {comp textField3::l:p::p, comp label4::l:p::p}, space :p:21:p, par l {comp label5:::p::p, comp textField4:::p::p}, space :::x, comp button1:::p::p, space :p:38:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -31,12 +31,12 @@ new FormModel {
 				name: "label6"
 				"text": "Energia eléctrica"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
-			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label7"
 				"text": "Mantenimiento"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField4"

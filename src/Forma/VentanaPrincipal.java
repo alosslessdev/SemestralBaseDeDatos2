@@ -10,9 +10,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
-/**
- * @author Jose Chiru
- */
 public class VentanaPrincipal extends JPanel {
     public VentanaPrincipal() {
         initComponents();
@@ -24,14 +21,7 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
         frame.setVisible(true);
     }
-
-    private void button1(ActionEvent e) {
-        // TODO add your code here
-        ConexionSQL objConectar = new ConexionSQL();
-        objConectar.conectarDb();
-        objConectar.desconectarDb();
-    }
-
+    
     private void iMenuGanancias(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame();
@@ -163,7 +153,6 @@ public class VentanaPrincipal extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - sdf ads
-        button1 = new JButton();
         menuBar1 = new JMenuBar();
         menu3 = new JMenu();
         IMenuMaterialEntrada = new JMenuItem();
@@ -185,15 +174,11 @@ public class VentanaPrincipal extends JPanel {
         cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
-        0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
-        . BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
-        red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
-        beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
-
-        //---- button1 ----
-        button1.setText("Conectarse a la base de datos");
-        button1.addActionListener(e -> button1(e));
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0
+        ,0,0,0), "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM
+        ,new java.awt.Font("D\u0069al\u006fg",java.awt.Font.BOLD,12),java.awt.Color.red),
+         getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e
+        ){if("\u0062or\u0064er".equals(e.getPropertyName()))throw new RuntimeException();}});
 
         //======== menuBar1 ========
         {
@@ -295,10 +280,6 @@ public class VentanaPrincipal extends JPanel {
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(55, 55, 55)
-                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(46, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(90, Short.MAX_VALUE)
                     .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -307,9 +288,7 @@ public class VentanaPrincipal extends JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
+                    .addGap(70, 70, 70)
                     .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(98, Short.MAX_VALUE))
         );
@@ -318,7 +297,6 @@ public class VentanaPrincipal extends JPanel {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     // Generated using JFormDesigner Evaluation license - sdf ads
-    private JButton button1;
     private JMenuBar menuBar1;
     private JMenu menu3;
     private JMenuItem IMenuMaterialEntrada;
