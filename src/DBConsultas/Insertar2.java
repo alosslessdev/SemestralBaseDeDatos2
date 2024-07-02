@@ -8,15 +8,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Insertar6 {
+public class Insertar2 {
     private String parametro1;
     private String parametro2;
-    private String parametro3;
-    private Boolean parametro4;
-    private Boolean parametro5;
-    private Boolean parametro6;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(Insertar3.class);
+    private AppLogs objLogs = new AppLogs(Insertar2.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);
@@ -26,18 +22,6 @@ public class Insertar6 {
     }
     public void setParametro2(String parametro2) {
         this.parametro2 = parametro2;
-    }
-    public void setParametro3(String parametro3) {
-        this.parametro3 = parametro3;
-    }
-    public void setParametro4(Boolean parametro4) {
-        this.parametro4 = parametro4;
-    }
-    public void setParametro5(Boolean parametro5) {
-        this.parametro5 = parametro5;
-    }
-    public void setParametro6(Boolean parametro6) {
-        this.parametro6 = parametro6;
     }
     public void setParametroString(String parametroString) {
         this.parametroString = parametroString;
@@ -58,11 +42,6 @@ public class Insertar6 {
                         ResultSet.CONCUR_READ_ONLY);
                 pst.setString(1, parametro1);
                 pst.setString(2, parametro2);
-                pst.setString(3, parametro3);
-                pst.setBoolean(4, parametro4);
-                pst.setBoolean(5, parametro5);
-                pst.setBoolean(6, parametro6);
-
                 pst.executeQuery();
 
 

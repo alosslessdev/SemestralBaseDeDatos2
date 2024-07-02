@@ -4,26 +4,35 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:37:p, par t {comp button1:::p::p, seq {comp label1:::p::p, space :18:18:p, comp radioButton1:::p::p, space :6:6:p, comp radioButton2:::p::p}}, space ::168:x}}"
-			"$verticalGroup": "par l {seq l {space :p:38:p, par l {seq l {space :4:4:p, comp label1:::p::p}, comp radioButton1:::p::p, comp radioButton2:::p::p}, space :p:90:p, comp button1:::p::p, space ::113:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:37:p, par l:::p {seq {comp label3:::p::p, space u:::p, comp textField3::::241:x}, seq {space :p:68:p, comp button1:::p::p}, seq l {par t {comp label1:::p::p, comp label2:::p::p}, space s:::p, par l:::p {comp textField1::::241:x, comp textField2::::241:x}}}, space ::49:x}}"
+			"$verticalGroup": "par l {seq l {space :p:40:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space :p:17:p, comp button1:::p::p, space ::71:x}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "Tipo:"
-			} )
-			add( new FormComponent( "javax.swing.JRadioButton" ) {
-				name: "radioButton1"
-				"text": "Entrada"
-			} )
-			add( new FormComponent( "javax.swing.JRadioButton" ) {
-				name: "radioButton2"
-				"text": "Salida"
+				"text": "Mes"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
 				"text": "Insertar"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Cantidad"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "IDGerente"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

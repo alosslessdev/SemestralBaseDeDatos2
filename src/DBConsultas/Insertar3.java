@@ -1,6 +1,7 @@
 package DBConsultas;
 
 import DBConexion.ConexionSQL;
+import LogsApp.AppLogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,9 +13,10 @@ public class Insertar3 {
     private String parametro2;
     private String parametro3;
     private String parametroString;
+    private AppLogs objLogs = new AppLogs(Insertar3.class);
 
 
-    //private AppLogs objLogs = new AppLogs(Insertar3.class);
+    //private AppLogs objLogs = new AppLogs(Insertar.class);
 
     public void setParametro1(String parametro1) {
         this.parametro1 = parametro1;
@@ -49,10 +51,10 @@ public class Insertar3 {
 
 
         }catch (SQLException ex){
-                throw new RuntimeException(ex);
+                objLogs.errorLogs(ex);
         }
     } catch (SQLException e) {
-            throw new RuntimeException(e);
+            objLogs.errorLogs(e);
         }
 
 

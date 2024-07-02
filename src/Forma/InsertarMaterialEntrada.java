@@ -30,7 +30,6 @@ public class InsertarMaterialEntrada extends JPanel {
 
         }else{
             JOptionPane.showMessageDialog(null, "Uno o mas campos estan en blanco ","Error",1);
-
         }
     }
 
@@ -61,7 +60,7 @@ public class InsertarMaterialEntrada extends JPanel {
         label5.setText("Origen");
 
         //---- button1 ----
-        button1.setText("Insertar3");
+        button1.setText("Insertar");
         button1.addActionListener(e -> button1(e));
 
         //---- label6 ----

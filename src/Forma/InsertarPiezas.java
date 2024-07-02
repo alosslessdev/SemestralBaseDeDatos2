@@ -4,6 +4,8 @@
 
 package Forma;
 
+import DBConsultas.Insertar2;
+
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -18,6 +20,19 @@ public class InsertarPiezas extends JPanel {
 
     private void button1(ActionEvent e) {
         // TODO add your code here
+        if (!textField1.getText().equals("") && !textField2.getText().equals("")) {
+            Insertar2 objInsertar2 = new Insertar2();
+            objInsertar2.setParametroString(
+                    "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
+                            "values (?, ?) ");
+            objInsertar2.setParametro1(textField1.getText());
+            objInsertar2.setParametro2(textField2.getText());
+            objInsertar2.insertar();
+            JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Uno o mas campos estan en blanco ","Error",1);
+        }
     }
 
     private void initComponents() {
@@ -30,12 +45,12 @@ public class InsertarPiezas extends JPanel {
         textField2 = new JTextField();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing.
-        border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER
-        ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font
-        . BOLD ,12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener(
-        new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r"
-        .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
+        . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax
+        . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,
+        12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans
+        . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .
+        getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- label1 ----
         label1.setText("Pieza");
@@ -44,7 +59,7 @@ public class InsertarPiezas extends JPanel {
         label2.setText("CodigoMaquina");
 
         //---- button1 ----
-        button1.setText("Insertar3");
+        button1.setText("Insertar");
         button1.addActionListener(e -> button1(e));
 
         GroupLayout layout = new GroupLayout(this);

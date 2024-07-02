@@ -4,6 +4,8 @@
 
 package Forma;
 
+import DBConsultas.Insertar4;
+
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -18,6 +20,25 @@ public class InsertarEmpleado extends JPanel {
 
     private void button1(ActionEvent e) {
         // TODO add your code here
+        if (!textField1.getText().equals("") && !textField2.getText().equals("") &&
+                !textField3.getText().equals("") &&
+                !textField4.getText().equals("")) {
+            Insertar4 objInsertar4 = new Insertar4();
+            objInsertar4.setParametroString(
+                    "insert into Gastos (EnergiaElectrica, Mantenimiento, IDGerente, Mes) " +
+                            "values (?, ?, ?, ?)");
+
+            objInsertar4.setParametro1(textField1.getText());
+            objInsertar4.setParametro2(textField2.getText());
+            objInsertar4.setParametro3(textField3.getText());
+            objInsertar4.setParametro4(textField4.getText());
+            objInsertar4.insertar();
+            JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Uno o mas campos estan en blanco ","Error",1);
+
+        }
     }
 
     private void initComponents() {
@@ -34,12 +55,11 @@ public class InsertarEmpleado extends JPanel {
         button1 = new JButton();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder
-        ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border
-        .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt
-        . Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void
-        propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( )
-        ;} } );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder ( 0
+        , 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
+        , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red ) ,
+         getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
+        ) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
         label1.setText("Nombre");
