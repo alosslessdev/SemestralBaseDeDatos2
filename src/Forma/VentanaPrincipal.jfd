@@ -19,19 +19,19 @@ new FormModel {
 					name: "menu3"
 					"text": "Insertar"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "iMenuMaterialEntrada"
+						name: "IMenuMaterialEntrada"
 						"text": "MaterialEntrada"
-						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMaterial", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialEntrada", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "iMenuMaterialSalida"
+						name: "IMenuMaterialSalida"
 						"text": "MaterialSalida"
-						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMaterialSalida", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialSalida", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
-						name: "iMenuGastos"
+						name: "IMenuGastos"
 						"text": "Gastos"
-						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuGastos", true ) )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuGastos", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "iMenuGanancias"

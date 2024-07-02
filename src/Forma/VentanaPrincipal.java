@@ -32,22 +32,6 @@ public class VentanaPrincipal extends JPanel {
         objConectar.desconectarDb();
     }
 
-    private void iMenuMaterial(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new InsertarMaterialEntrada());
-        frame.setVisible(true);
-        frame.pack();
-    }
-
-    private void iMenuGastos(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new InsertarGastos());
-        frame.setVisible(true);
-        frame.pack();
-    }
-
     private void iMenuGanancias(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame();
@@ -152,15 +136,29 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
-    private void iMenuMaterialSalida(ActionEvent e) {
+    private void IMenuMaterialEntrada(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new InsertarMaterialEntrada());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void IMenuMaterialSalida(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame();
         frame.setContentPane(new InsertarMaterialSalida());
         frame.setVisible(true);
-        frame.pack();    
+        frame.pack();
     }
 
-
+    private void IMenuGastos(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new InsertarGastos());
+        frame.setVisible(true);
+        frame.pack();
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -168,9 +166,9 @@ public class VentanaPrincipal extends JPanel {
         button1 = new JButton();
         menuBar1 = new JMenuBar();
         menu3 = new JMenu();
-        iMenuMaterialEntrada = new JMenuItem();
-        iMenuMaterialSalida = new JMenuItem();
-        iMenuGastos = new JMenuItem();
+        IMenuMaterialEntrada = new JMenuItem();
+        IMenuMaterialSalida = new JMenuItem();
+        IMenuGastos = new JMenuItem();
         iMenuGanancias = new JMenuItem();
         iMenuPiezas = new JMenuItem();
         iMenuMaquinas = new JMenuItem();
@@ -187,13 +185,11 @@ public class VentanaPrincipal extends JPanel {
         cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-        javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax
-        . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
-        .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans.
-        PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .
-        equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
+        0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
+        . BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
+        red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
+        beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- button1 ----
         button1.setText("Conectarse a la base de datos");
@@ -206,20 +202,20 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu3.setText("Insertar");
 
-                //---- iMenuMaterialEntrada ----
-                iMenuMaterialEntrada.setText("MaterialEntrada");
-                iMenuMaterialEntrada.addActionListener(e -> iMenuMaterial(e));
-                menu3.add(iMenuMaterialEntrada);
+                //---- IMenuMaterialEntrada ----
+                IMenuMaterialEntrada.setText("MaterialEntrada");
+                IMenuMaterialEntrada.addActionListener(e -> IMenuMaterialEntrada(e));
+                menu3.add(IMenuMaterialEntrada);
 
-                //---- iMenuMaterialSalida ----
-                iMenuMaterialSalida.setText("MaterialSalida");
-                iMenuMaterialSalida.addActionListener(e -> iMenuMaterialSalida(e));
-                menu3.add(iMenuMaterialSalida);
+                //---- IMenuMaterialSalida ----
+                IMenuMaterialSalida.setText("MaterialSalida");
+                IMenuMaterialSalida.addActionListener(e -> IMenuMaterialSalida(e));
+                menu3.add(IMenuMaterialSalida);
 
-                //---- iMenuGastos ----
-                iMenuGastos.setText("Gastos");
-                iMenuGastos.addActionListener(e -> iMenuGastos(e));
-                menu3.add(iMenuGastos);
+                //---- IMenuGastos ----
+                IMenuGastos.setText("Gastos");
+                IMenuGastos.addActionListener(e -> IMenuGastos(e));
+                menu3.add(IMenuGastos);
 
                 //---- iMenuGanancias ----
                 iMenuGanancias.setText("Ganancias");
@@ -325,9 +321,9 @@ public class VentanaPrincipal extends JPanel {
     private JButton button1;
     private JMenuBar menuBar1;
     private JMenu menu3;
-    private JMenuItem iMenuMaterialEntrada;
-    private JMenuItem iMenuMaterialSalida;
-    private JMenuItem iMenuGastos;
+    private JMenuItem IMenuMaterialEntrada;
+    private JMenuItem IMenuMaterialSalida;
+    private JMenuItem IMenuGastos;
     private JMenuItem iMenuGanancias;
     private JMenuItem iMenuPiezas;
     private JMenuItem iMenuMaquinas;
