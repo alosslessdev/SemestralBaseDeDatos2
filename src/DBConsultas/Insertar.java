@@ -50,7 +50,7 @@ public class Insertar {
                         ResultSet.TYPE_SCROLL_INSENSITIVE,
                         ResultSet.CONCUR_READ_ONLY);
                 pst.setString(1, parametro1);
-                pst.setDouble(2, Double.parseDouble(parametro2));
+                pst.setString(2, parametro2);
                 pst.setString(3, parametro3);
                 pst.executeQuery();
 
