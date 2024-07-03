@@ -15,7 +15,7 @@ public class InsertarUpdate6 {
     private Boolean parametro5;
     private Boolean parametro6;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(InsertarUpdate3.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate6.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);

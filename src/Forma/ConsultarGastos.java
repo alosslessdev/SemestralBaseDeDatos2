@@ -4,6 +4,8 @@
 
 package Forma;
 
+import DBConsultas.Consultas2;
+
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -18,6 +20,19 @@ public class ConsultarGastos extends JPanel {
 
     private void button1(ActionEvent e) {
         // TODO add your code here
+        if (!textField1.getText().equals("") || !textField2.getText().equals("")){
+            Consultas2 objConsultas2 = new Consultas2();
+            objConsultas2.setTitulo(new String[]{"1", "3"});
+            objConsultas2.setParametroString(
+                    "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
+                            "and NombrePieza = ?");
+            objConsultas2.setParametro1(textField1.getText());
+            objConsultas2.setParametro2(textField2.getText());
+            table1.setModel(objConsultas2.consultas());
+        }else{
+            //impresionDialogo("El campo esta en blanco", "Sin datos", 1);
+        }
+
     }
 
     private void initComponents() {
@@ -28,19 +43,19 @@ public class ConsultarGastos extends JPanel {
         button1 = new JButton();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
+        label2 = new JLabel();
+        textField2 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(
-        new javax.swing.border.EmptyBorder(0,0,0,0), "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e"
-        ,javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM
-        ,new java.awt.Font("D\u0069al\u006fg",java.awt.Font.BOLD,12)
-        ,java.awt.Color.red), getBorder())); addPropertyChangeListener(
-        new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e
-        ){if("\u0062or\u0064er".equals(e.getPropertyName()))throw new RuntimeException()
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder
+        (0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing.border.TitledBorder.CENTER,javax.swing.border
+        .TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt
+        .Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void
+        propertyChange(java.beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName()))throw new RuntimeException()
         ;}});
 
         //---- label1 ----
-        label1.setText("CodigoFactura");
+        label1.setText("Mes");
 
         //---- button1 ----
         button1.setText("Consultar");
@@ -51,6 +66,9 @@ public class ConsultarGastos extends JPanel {
             scrollPane1.setViewportView(table1);
         }
 
+        //---- label2 ----
+        label2.setText("A\u00f1o");
+
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
@@ -58,15 +76,20 @@ public class ConsultarGastos extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
                             .addGap(41, 41, 41)
-                            .addComponent(label1)
+                            .addGroup(layout.createParallelGroup()
+                                .addComponent(label1)
+                                .addComponent(label2))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup()
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button1)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(button1))))
                     .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -76,7 +99,11 @@ public class ConsultarGastos extends JPanel {
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label1)
                         .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label2)
+                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                     .addComponent(button1)
                     .addGap(46, 46, 46)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
@@ -92,5 +119,7 @@ public class ConsultarGastos extends JPanel {
     private JButton button1;
     private JScrollPane scrollPane1;
     private JTable table1;
+    private JLabel label2;
+    private JTextField textField2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

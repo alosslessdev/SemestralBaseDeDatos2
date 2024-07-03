@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class InsertarUpdate1 {
     private String parametro1;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(InsertarUpdate3.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate1.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);

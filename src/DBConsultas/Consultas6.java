@@ -19,7 +19,7 @@ public class Consultas6 {
     private String parametro6;
     private String parametroString;
     private String [] titulo;
-    private AppLogs objLogs = new AppLogs(Consultas2.class);
+    private AppLogs objLogs = new AppLogs(Consultas6.class);
 
 
     public void setTitulo(String[] titulo) {

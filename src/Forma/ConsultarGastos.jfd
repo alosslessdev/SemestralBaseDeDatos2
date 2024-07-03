@@ -4,13 +4,13 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :p:41:p, comp label1:::p::p, space s:::p, par l {comp textField1:::p:193:p, comp button1:::p::p}}, seq l {space :p:18:p, comp scrollPane1:::p:359:p}}, space ::23:x}}"
-			"$verticalGroup": "par l {seq l {space :p:44:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space ::90:x, comp button1:::p::p, space :p:46:p, comp scrollPane1:::p:250:p, space :p:27:p}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:18:p, comp scrollPane1:::p:359:p}, seq l {space :p:41:p, par l {comp label1::l:p::p, comp label2::l:p::p}, space s:::p, par l {seq {space :6:6:p, comp textField2:::p::p}, comp textField1:::p:193:p, comp button1:::p::p}}}, space ::23:x}}"
+			"$verticalGroup": "par l {seq l {space :p:44:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space u:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space ::44:x, comp button1:::p::p, space :p:46:p, comp scrollPane1:::p:250:p, space :p:27:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
-				"text": "CodigoFactura"
+				"text": "Mes"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField1"
@@ -25,6 +25,13 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JTable" ) {
 					name: "table1"
 				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Año"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

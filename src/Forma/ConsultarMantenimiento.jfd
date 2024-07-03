@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:141:p, comp button1:::p::p}, seq l {space :p:23:p, comp scrollPane1:::p:359:p}}, space :p:213:p}}"
-			"$verticalGroup": "par l {seq {space ::198:x, comp button1:::p::p, space :p:133:p, comp scrollPane1:::p:250:p, space :p:30:p}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:141:p, comp button1:::p::p}, seq l {space :p:23:p, comp scrollPane1:::p:359:p}, seq l {space :p:34:p, par l {seq {comp label2:::p::p, space s:::p, comp textField2:::p::p}, seq l {comp label1:::p::p, space s:::p, comp textField1:::p::p}}}}, space :p:18:p}}"
+			"$verticalGroup": "par l {seq {space :p:39:p, par l {comp label1:::p::p, comp textField1:::p::p}, space s:::p, par l {comp label2:::p::p, comp textField2:::p::p}, space ::73:x, comp button1:::p::p, space :p:133:p, comp scrollPane1:::p:250:p, space :p:30:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -18,6 +18,20 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JTable" ) {
 					name: "table1"
 				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

@@ -4,7 +4,7 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq t {space ::90:x, comp menuBar1:::p::p, space :p:76:p}}"
+			"$horizontalGroup": "par l {seq t {space ::19:x, comp menuBar1:::p::p, space :p:76:p}}"
 			"$verticalGroup": "par l {seq t {space :p:70:p, comp menuBar1:::p:52:p, space ::98:x}}"
 		} ) {
 			name: "this"
@@ -50,6 +50,50 @@ new FormModel {
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "iMenuEmpleado"
+						"text": "Empleado"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuEmpleado", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu2"
+					"text": "Actualizar"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "IMenuMaterialEntrada2"
+						"text": "MaterialEntrada"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialEntrada", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "IMenuMaterialSalida2"
+						"text": "MaterialSalida"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialSalida", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "IMenuGastos2"
+						"text": "Gastos"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuGastos", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuGanancias2"
+						"text": "Ganancias"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuGanancias", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuPiezas2"
+						"text": "Piezas"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuPiezas", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuMaquinas2"
+						"text": "Maquinas"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMaquinas", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuMantenimiento2"
+						"text": "Mantenimiento"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuMantenimiento", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "iMenuEmpleado2"
 						"text": "Empleado"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "iMenuEmpleado", true ) )
 					} )

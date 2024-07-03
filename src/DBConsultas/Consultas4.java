@@ -17,7 +17,7 @@ public class Consultas4 {
     private String parametro4;
     private String parametroString;
     private String [] titulo;
-    private AppLogs objLogs = new AppLogs(Consultas2.class);
+    private AppLogs objLogs = new AppLogs(Consultas4.class);
 
     public void setTitulo(String[] titulo) {
         this.titulo = titulo;
