@@ -1,20 +1,17 @@
-/*
+package Forma;/*
  * Created by JFormDesigner on Fri Jun 28 20:35:07 GMT-05:00 2024
  */
 
-package Forma;
-
 import DBConsultas.InsertarUpdate3;
 
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.event.ActionEvent;
 
 /**
  * @author pancho
  */
-public class InsertarGanancias extends JPanel {
-    public InsertarGanancias() {
+public class UpdateGanancias extends JPanel {
+    public UpdateGanancias() {
         initComponents();
     }
 

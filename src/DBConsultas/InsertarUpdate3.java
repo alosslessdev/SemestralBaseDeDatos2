@@ -5,14 +5,14 @@ import LogsApp.AppLogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Insertar2 {
+public class InsertarUpdate3 {
     private String parametro1;
     private String parametro2;
+    private String parametro3;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(Insertar2.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate3.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);
@@ -22,6 +22,9 @@ public class Insertar2 {
     }
     public void setParametro2(String parametro2) {
         this.parametro2 = parametro2;
+    }
+    public void setParametro3(String parametro3) {
+        this.parametro3 = parametro3;
     }
     public void setParametroString(String parametroString) {
         this.parametroString = parametroString;
@@ -37,18 +40,17 @@ public class Insertar2 {
             //TYPE_SCROLL_INSENSITIVE moverse hacia adelante y atraz
             //CONCUR_READ_ONLY
             try(Connection conectar = conexion.getConexion()){
-                PreparedStatement pst = conectar.prepareStatement(sql,
-                        ResultSet.TYPE_SCROLL_INSENSITIVE,
-                        ResultSet.CONCUR_READ_ONLY);
+                PreparedStatement pst = conectar.prepareStatement(sql);
                 pst.setString(1, parametro1);
                 pst.setString(2, parametro2);
+                pst.setString(3, parametro3);
                 pst.executeQuery();
 
 
-            }catch (SQLException ex){
+        }catch (SQLException ex){
                 objLogs.errorLogs(ex);
-            }
-        } catch (SQLException e) {
+        }
+    } catch (SQLException e) {
             objLogs.errorLogs(e);
         }
 

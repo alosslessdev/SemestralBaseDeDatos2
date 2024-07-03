@@ -1,20 +1,17 @@
-/*
+package Forma;/*
  * Created by JFormDesigner on Fri Jun 28 20:36:34 GMT-05:00 2024
  */
 
-package Forma;
-
 import DBConsultas.InsertarUpdate4;
 
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.event.ActionEvent;
 
 /**
  * @author pancho
  */
-public class InsertarEmpleado extends JPanel {
-    public InsertarEmpleado() {
+public class UpdateEmpleado extends JPanel {
+    public UpdateEmpleado() {
         initComponents();
     }
 

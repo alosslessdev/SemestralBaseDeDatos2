@@ -1,20 +1,17 @@
-/*
- * Created by JFormDesigner on Fri Jun 28 20:35:07 GMT-05:00 2024
+package Forma;/*
+ * Created by JFormDesigner on Sun Jun 30 23:57:31 GMT-05:00 2024
  */
-
-package Forma;
 
 import DBConsultas.InsertarUpdate3;
 
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.event.ActionEvent;
 
 /**
  * @author pancho
  */
-public class InsertarGanancias extends JPanel {
-    public InsertarGanancias() {
+public class UpdateMaterialSalida extends JPanel {
+    public UpdateMaterialSalida() {
         initComponents();
     }
 
@@ -24,7 +21,7 @@ public class InsertarGanancias extends JPanel {
             InsertarUpdate3 objInsertarUpdate3 = new InsertarUpdate3();
             objInsertarUpdate3.setParametroString(
                     "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
-                            "values (?, ?, ?) ");
+                            "values (?, ?, ?, convert(varchar(10), GETDATE(), 108), GETDATE()) ");
             objInsertarUpdate3.setParametro1(textField1.getText());
             objInsertarUpdate3.setParametro2(textField2.getText());
             objInsertarUpdate3.setParametro3(textField3.getText());
@@ -39,90 +36,88 @@ public class InsertarGanancias extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - sdf ads
-        label1 = new JLabel();
-        button1 = new JButton();
-        label2 = new JLabel();
-        label3 = new JLabel();
+        label4 = new JLabel();
+        label5 = new JLabel();
         textField1 = new JTextField();
         textField2 = new JTextField();
+        button1 = new JButton();
+        label6 = new JLabel();
         textField3 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
-        swing.border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border
-        .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog"
-        ,java.awt.Font.BOLD,12),java.awt.Color.red), getBorder
-        ())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
-        .beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException
-        ();}});
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new
+        javax . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e" , javax
+        . swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java
+        . awt .Font ( "D\u0069al\u006fg", java .awt . Font. BOLD ,12 ) ,java . awt
+        . Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .
+        PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062or\u0064er" .
+        equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
-        //---- label1 ----
-        label1.setText("Mes");
+        //---- label4 ----
+        label4.setText("Peso");
+
+        //---- label5 ----
+        label5.setText("Origen");
 
         //---- button1 ----
         button1.setText("Insertar");
         button1.addActionListener(e -> button1(e));
 
-        //---- label2 ----
-        label2.setText("Cantidad");
-
-        //---- label3 ----
-        label3.setText("IDGerente");
+        //---- label6 ----
+        label6.setText("Descripcion");
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(37, 37, 37)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(label3)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(68, 68, 68)
+                            .addGap(161, 161, 161)
                             .addComponent(button1))
                         .addGroup(layout.createSequentialGroup()
+                            .addGap(49, 49, 49)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(label1)
-                                .addComponent(label2))
+                                .addComponent(label6)
+                                .addComponent(label4)
+                                .addComponent(label5))
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE))))
-                    .addContainerGap(49, Short.MAX_VALUE))
+                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))))
+                    .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(40, 40, 40)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label1)
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(42, 42, 42)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label6))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label2)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label4)
                         .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label3)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label5)
                         .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(17, 17, 17)
+                    .addGap(12, 12, 12)
                     .addComponent(button1)
-                    .addContainerGap(71, Short.MAX_VALUE))
+                    .addGap(44, 44, 44))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     // Generated using JFormDesigner Evaluation license - sdf ads
-    private JLabel label1;
-    private JButton button1;
-    private JLabel label2;
-    private JLabel label3;
+    private JLabel label4;
+    private JLabel label5;
     private JTextField textField1;
     private JTextField textField2;
+    private JButton button1;
+    private JLabel label6;
     private JTextField textField3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

@@ -1,18 +1,15 @@
-/*
+package Forma;/*
  * Created by JFormDesigner on Mon Jun 24 11:32:35 EST 2024
  */
 
-package Forma;
-
 import DBConsultas.InsertarUpdate4;
 
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.event.ActionEvent;
 
 
-public class InsertarGastos extends JPanel {
-    public InsertarGastos() {
+public class UpdateGastos extends JPanel {
+    public UpdateGastos() {
         initComponents();
     }
 

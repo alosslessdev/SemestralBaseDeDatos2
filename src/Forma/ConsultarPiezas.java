@@ -4,6 +4,8 @@
 
 package Forma;
 
+import DBConsultas.Consultas2;
+
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -18,6 +20,19 @@ public class ConsultarPiezas extends JPanel {
 
     private void button1(ActionEvent e) {
         // TODO add your code here
+        if (!textField1.getText().equals("") || !textField2.getText().equals("")){
+            Consultas2 objConsultas2 = new Consultas2();
+            objConsultas2.setTitulo(new String[]{"1", "3"});
+            objConsultas2.setParametroString(
+                    "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
+                            "and NombrePieza = ?");
+            objConsultas2.setParametro1(textField1.getText());
+            objConsultas2.setParametro2(textField2.getText());
+            table1.setModel(objConsultas2.consultas());
+        }else{
+            //impresionDialogo("El campo esta en blanco", "Sin datos", 1);
+        }
+
     }
 
     private void initComponents() {

@@ -5,16 +5,15 @@ import LogsApp.AppLogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Insertar4 {
+public class InsertarUpdate4 {
     private String parametro1;
     private String parametro2;
     private String parametro3;
     private String parametro4;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(Insertar4.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate4.class);
 
 
     //private AppLogs objLogs = new AppLogs(arametroString.class);
@@ -45,9 +44,7 @@ public class Insertar4 {
             //TYPE_SCROLL_INSENSITIVE moverse hacia adelante y atraz
             //CONCUR_READ_ONLY
             try(Connection conectar = conexion.getConexion()){
-                PreparedStatement pst = conectar.prepareStatement(sql,
-                        ResultSet.TYPE_SCROLL_INSENSITIVE,
-                        ResultSet.CONCUR_READ_ONLY);
+                PreparedStatement pst = conectar.prepareStatement(sql);
                 pst.setString(1, parametro1);
                 pst.setString(2, parametro2);
                 pst.setString(3, parametro3);
