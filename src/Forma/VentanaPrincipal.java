@@ -150,6 +150,69 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
+    private void AMenuMaterialSalida2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateMaterialSalida());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuMaterialEntrada2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateMaterialEntrada());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuGastos2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateGastos());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuGanancias2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateGanancias());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuPiezas2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdatePiezas());
+        frame.setVisible(true);
+        frame.pack();
+    }
+    private void AMenuMaquinas2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateMaquinas());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuMantenimiento2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateMantenimiento());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
+    private void AMenuEmpleado2(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame();
+        frame.setContentPane(new UpdateEmpleado());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - sdf ads
@@ -164,14 +227,14 @@ public class VentanaPrincipal extends JPanel {
         iMenuMantenimiento = new JMenuItem();
         iMenuEmpleado = new JMenuItem();
         menu2 = new JMenu();
-        IMenuMaterialEntrada2 = new JMenuItem();
-        IMenuMaterialSalida2 = new JMenuItem();
-        IMenuGastos2 = new JMenuItem();
-        iMenuGanancias2 = new JMenuItem();
-        iMenuPiezas2 = new JMenuItem();
-        iMenuMaquinas2 = new JMenuItem();
-        iMenuMantenimiento2 = new JMenuItem();
-        iMenuEmpleado2 = new JMenuItem();
+        AMenuMaterialEntrada2 = new JMenuItem();
+        AMenuMaterialSalida2 = new JMenuItem();
+        AMenuGastos2 = new JMenuItem();
+        AMenuGanancias2 = new JMenuItem();
+        AMenuPiezas2 = new JMenuItem();
+        AMenuMaquinas2 = new JMenuItem();
+        AMenuMantenimiento2 = new JMenuItem();
+        AMenuEmpleado2 = new JMenuItem();
         menu1 = new JMenu();
         cMenuMaterialEntrada = new JMenuItem();
         cMenuMaterialSalida = new JMenuItem();
@@ -183,12 +246,11 @@ public class VentanaPrincipal extends JPanel {
         cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
-        . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax
-        . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,
-        12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans
-        . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .
-        getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder ( 0
+        , 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
+        , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red ) ,
+         getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
+        ) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //======== menuBar1 ========
         {
@@ -243,45 +305,45 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu2.setText("Actualizar");
 
-                //---- IMenuMaterialEntrada2 ----
-                IMenuMaterialEntrada2.setText("MaterialEntrada");
-                IMenuMaterialEntrada2.addActionListener(e -> IMenuMaterialEntrada(e));
-                menu2.add(IMenuMaterialEntrada2);
+                //---- AMenuMaterialEntrada2 ----
+                AMenuMaterialEntrada2.setText("MaterialEntrada");
+                AMenuMaterialEntrada2.addActionListener(e -> AMenuMaterialEntrada2(e));
+                menu2.add(AMenuMaterialEntrada2);
 
-                //---- IMenuMaterialSalida2 ----
-                IMenuMaterialSalida2.setText("MaterialSalida");
-                IMenuMaterialSalida2.addActionListener(e -> IMenuMaterialSalida(e));
-                menu2.add(IMenuMaterialSalida2);
+                //---- AMenuMaterialSalida2 ----
+                AMenuMaterialSalida2.setText("MaterialSalida");
+                AMenuMaterialSalida2.addActionListener(e -> AMenuMaterialSalida2(e));
+                menu2.add(AMenuMaterialSalida2);
 
-                //---- IMenuGastos2 ----
-                IMenuGastos2.setText("Gastos");
-                IMenuGastos2.addActionListener(e -> IMenuGastos(e));
-                menu2.add(IMenuGastos2);
+                //---- AMenuGastos2 ----
+                AMenuGastos2.setText("Gastos");
+                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
+                menu2.add(AMenuGastos2);
 
-                //---- iMenuGanancias2 ----
-                iMenuGanancias2.setText("Ganancias");
-                iMenuGanancias2.addActionListener(e -> iMenuGanancias(e));
-                menu2.add(iMenuGanancias2);
+                //---- AMenuGanancias2 ----
+                AMenuGanancias2.setText("Ganancias");
+                AMenuGanancias2.addActionListener(e -> AMenuGanancias2(e));
+                menu2.add(AMenuGanancias2);
 
-                //---- iMenuPiezas2 ----
-                iMenuPiezas2.setText("Piezas");
-                iMenuPiezas2.addActionListener(e -> iMenuPiezas(e));
-                menu2.add(iMenuPiezas2);
+                //---- AMenuPiezas2 ----
+                AMenuPiezas2.setText("Piezas");
+                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
+                menu2.add(AMenuPiezas2);
 
-                //---- iMenuMaquinas2 ----
-                iMenuMaquinas2.setText("Maquinas");
-                iMenuMaquinas2.addActionListener(e -> iMenuMaquinas(e));
-                menu2.add(iMenuMaquinas2);
+                //---- AMenuMaquinas2 ----
+                AMenuMaquinas2.setText("Maquinas");
+                AMenuMaquinas2.addActionListener(e -> AMenuMaquinas2(e));
+                menu2.add(AMenuMaquinas2);
 
-                //---- iMenuMantenimiento2 ----
-                iMenuMantenimiento2.setText("Mantenimiento");
-                iMenuMantenimiento2.addActionListener(e -> iMenuMantenimiento(e));
-                menu2.add(iMenuMantenimiento2);
+                //---- AMenuMantenimiento2 ----
+                AMenuMantenimiento2.setText("Mantenimiento");
+                AMenuMantenimiento2.addActionListener(e -> AMenuMantenimiento2(e));
+                menu2.add(AMenuMantenimiento2);
 
-                //---- iMenuEmpleado2 ----
-                iMenuEmpleado2.setText("Empleado");
-                iMenuEmpleado2.addActionListener(e -> iMenuEmpleado(e));
-                menu2.add(iMenuEmpleado2);
+                //---- AMenuEmpleado2 ----
+                AMenuEmpleado2.setText("Empleado");
+                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
+                menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);
 
@@ -364,14 +426,14 @@ public class VentanaPrincipal extends JPanel {
     private JMenuItem iMenuMantenimiento;
     private JMenuItem iMenuEmpleado;
     private JMenu menu2;
-    private JMenuItem IMenuMaterialEntrada2;
-    private JMenuItem IMenuMaterialSalida2;
-    private JMenuItem IMenuGastos2;
-    private JMenuItem iMenuGanancias2;
-    private JMenuItem iMenuPiezas2;
-    private JMenuItem iMenuMaquinas2;
-    private JMenuItem iMenuMantenimiento2;
-    private JMenuItem iMenuEmpleado2;
+    private JMenuItem AMenuMaterialEntrada2;
+    private JMenuItem AMenuMaterialSalida2;
+    private JMenuItem AMenuGastos2;
+    private JMenuItem AMenuGanancias2;
+    private JMenuItem AMenuPiezas2;
+    private JMenuItem AMenuMaquinas2;
+    private JMenuItem AMenuMantenimiento2;
+    private JMenuItem AMenuEmpleado2;
     private JMenu menu1;
     private JMenuItem cMenuMaterialEntrada;
     private JMenuItem cMenuMaterialSalida;
