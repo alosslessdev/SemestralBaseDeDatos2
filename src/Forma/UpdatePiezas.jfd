@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq {space :p:36:p, par t {comp label2:::p::p, comp label1:::p::p}, space s:::p, par l {comp textField1:::p:207:p, comp textField2:::p:207:p}}, seq l {space :p:156:p, comp button1:::p::p}}, space ::42:x}}"
-			"$verticalGroup": "par l {seq l {space :p:39:p, par b {comp textField1::b:p::p, comp label1::b:p::p}, space :p:23:p, par l {comp label2:::p::p, comp textField2:::p::p}, space :p:39:p, comp button1:::p::p, space ::72:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:72:p, par t {seq l {par t {comp label2:::p::p, comp label1:::p::p}, space s:::p, par l {seq {comp button1:::p::p, space :0:125:x}, comp textField1:::::x, seq {comp textField2:::::x, space :p:4:p}}}, seq l {par t {comp label3:::p::p, comp label4:::p::p}, space s:::x, par l:::p {comp textField3::t::203:x, comp textField4::t::203:x}, space :4:4:p}}}, seq l {space :p:86:p, comp label5:::p::p}}, space :p:61:p}}"
+			"$verticalGroup": "par l {seq l {space :p:39:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space :p:23:p, par l {comp label2:::p::p, comp textField2:::p::p}, space :::p, comp label5:::::x, space u:::p, par b {comp textField3::b:p::p, comp label4::b:p::p}, space :p:24:p, par b {comp label3::b:p::p, comp textField4::b:p::p}, space :p:34:p, comp button1:::p::p, space :p:53:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -27,9 +27,27 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField2"
 			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "CodigoMaquina"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Pieza"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Cambiar Hacia:"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 275 )
+			"size": new java.awt.Dimension( 455, 375 )
 		} )
 	}
 }

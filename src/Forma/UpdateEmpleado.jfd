@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:40:p, par t {comp label1:::p::p, comp label2:::p::p, comp label3:::p::p, comp label4:::p::p}, space u:::p, par l {comp textField4::::209:x, comp textField3::l:::x, comp textField2::l::209:x, comp textField1::l::209:x}, space :p:56:p}, seq l {space :p:159:p, comp button1:::p::p, space ::163:x}}"
-			"$verticalGroup": "par l {seq l {space :p:23:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space :p:26:p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp textField4::b:p::p}, space s:::p, comp button1:::p::p, space ::27:x}}"
+			"$horizontalGroup": "par l {seq l {space :p:157:p, comp button1:::p::p, space ::162:x}, seq t {par t {seq {space ::40:x, par l {seq l {space :33:33:p, comp label7:::p::p, space :12:12:p, comp textField7:::p:209:p}, seq l {space :31:31:p, comp label6:::p::p, space :12:12:p, comp textField6:::p:209:p}, seq l {comp label5:::p::p, space :12:12:p, comp textField5:::p:209:p}, seq l {space :34:34:p, par l {comp label9:::p::p, seq {comp label8:::p::p, space :12:12:p, comp textField8:::p:209:p}}}}}, seq {space :p:40:p, par t {comp label1:::p::p, comp label2:::p::p, comp label3:::p::p, comp label4:::p::p}, space u:::p, par l {comp textField4::::209:x, comp textField3::l:::x, comp textField2::l::209:x, comp textField1::l::209:x}}}, space :p:56:p}}"
+			"$verticalGroup": "par l {seq l {space :p:23:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space :p:26:p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp textField4::b:p::p}, space s:::p, comp label9:::p::p, space :::x, par l {seq l {space :8:8:p, comp label8:::p::p}, comp textField8:::p::p}, space :26:26:p, par l {seq l {space :8:8:p, comp label7:::p::p}, comp textField7:::p::p}, space :18:18:p, par l {seq l {space :8:8:p, comp label6:::p::p}, comp textField6:::p::p}, space :18:18:p, par l {seq l {space :8:8:p, comp label5:::p::p}, comp textField5:::p::p}, space :p:31:p, comp button1:::p::p, space :p:54:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -41,9 +41,41 @@ new FormModel {
 				"text": "Insertar"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
 			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Identificacion"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Sucursal"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField7"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Apellido"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Nombre"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField8"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "Cambiar hacia: "
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 400, 580 )
 		} )
 	}
 }

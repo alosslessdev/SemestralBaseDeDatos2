@@ -2,7 +2,7 @@ package Forma;/*
  * Created by JFormDesigner on Fri Jun 28 20:36:34 GMT-05:00 2024
  */
 
-import DBConsultas.InsertarUpdate4;
+import DBConsultas.InsertarUpdate6NoBoolean;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,16 +20,16 @@ public class UpdateEmpleado extends JPanel {
         if (!textField1.getText().equals("") && !textField2.getText().equals("") &&
                 !textField3.getText().equals("") &&
                 !textField4.getText().equals("")) {
-            InsertarUpdate4 objInsertarUpdate4 = new InsertarUpdate4();
-            objInsertarUpdate4.setParametroString(
+            InsertarUpdate6NoBoolean objInsertarUpdate6NoBoolean = new InsertarUpdate6NoBoolean();
+            objInsertarUpdate6NoBoolean.setParametroString(
                     "insert into Gastos (EnergiaElectrica, Mantenimiento, IDGerente, Mes) " +
                             "values (?, ?, ?, ?)");
 
-            objInsertarUpdate4.setParametro1(textField1.getText());
-            objInsertarUpdate4.setParametro2(textField2.getText());
-            objInsertarUpdate4.setParametro3(textField3.getText());
-            objInsertarUpdate4.setParametro4(textField4.getText());
-            objInsertarUpdate4.insertar();
+            objInsertarUpdate6NoBoolean.setParametro1(textField1.getText());
+            objInsertarUpdate6NoBoolean.setParametro2(textField2.getText());
+            objInsertarUpdate6NoBoolean.setParametro3(textField3.getText());
+            objInsertarUpdate6NoBoolean.setParametro4(textField4.getText());
+            objInsertarUpdate6NoBoolean.insertar();
             JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
 
         }else{
@@ -50,13 +50,24 @@ public class UpdateEmpleado extends JPanel {
         label4 = new JLabel();
         textField4 = new JTextField();
         button1 = new JButton();
+        textField5 = new JTextField();
+        label5 = new JLabel();
+        label6 = new JLabel();
+        textField6 = new JTextField();
+        textField7 = new JTextField();
+        label7 = new JLabel();
+        label8 = new JLabel();
+        textField8 = new JTextField();
+        label9 = new JLabel();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder ( 0
-        , 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
-        , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red ) ,
-         getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
-        ) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
+        .swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax.swing
+        .border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
+        Font("D\u0069alog",java.awt.Font.BOLD,12),java.awt.Color.red
+        ), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
+        public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".equals(e.getPropertyName(
+        )))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Nombre");
@@ -74,28 +85,70 @@ public class UpdateEmpleado extends JPanel {
         button1.setText("Insertar");
         button1.addActionListener(e -> button1(e));
 
+        //---- label5 ----
+        label5.setText("Identificacion");
+
+        //---- label6 ----
+        label6.setText("Sucursal");
+
+        //---- label7 ----
+        label7.setText("Apellido");
+
+        //---- label8 ----
+        label8.setText("Nombre");
+
+        //---- label9 ----
+        label9.setText("Cambiar hacia: ");
+
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(40, 40, 40)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addComponent(label1)
-                        .addComponent(label2)
-                        .addComponent(label3)
-                        .addComponent(label4))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                        .addComponent(textField3)
-                        .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                        .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
-                    .addGap(56, 56, 56))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(159, 159, 159)
+                    .addGap(157, 157, 157)
                     .addComponent(button1)
-                    .addContainerGap(163, Short.MAX_VALUE))
+                    .addContainerGap(162, Short.MAX_VALUE))
+                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap(40, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup()
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(33, 33, 33)
+                                    .addComponent(label7)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(31, 31, 31)
+                                    .addComponent(label6)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(textField6, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label5)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(34, 34, 34)
+                                    .addGroup(layout.createParallelGroup()
+                                        .addComponent(label9)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(label8)
+                                            .addGap(12, 12, 12)
+                                            .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(40, 40, 40)
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addComponent(label1)
+                                .addComponent(label2)
+                                .addComponent(label3)
+                                .addComponent(label4))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup()
+                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                .addComponent(textField3)
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))))
+                    .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -117,8 +170,34 @@ public class UpdateEmpleado extends JPanel {
                         .addComponent(label4)
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
+                    .addComponent(label9)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(label8))
+                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(26, 26, 26)
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(label7))
+                        .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(label6))
+                        .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(8, 8, 8)
+                            .addComponent(label5))
+                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(31, 31, 31)
                     .addComponent(button1)
-                    .addContainerGap(27, Short.MAX_VALUE))
+                    .addGap(54, 54, 54))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
@@ -134,5 +213,14 @@ public class UpdateEmpleado extends JPanel {
     private JLabel label4;
     private JTextField textField4;
     private JButton button1;
+    private JTextField textField5;
+    private JLabel label5;
+    private JLabel label6;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JLabel label7;
+    private JLabel label8;
+    private JTextField textField8;
+    private JLabel label9;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

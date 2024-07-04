@@ -3,6 +3,7 @@ package Forma;/*
  */
 
 import DBConsultas.InsertarUpdate2;
+import DBConsultas.InsertarUpdate4;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,13 +19,14 @@ public class UpdatePiezas extends JPanel {
     private void button1(ActionEvent e) {
         // TODO add your code here
         if (!textField1.getText().equals("") && !textField2.getText().equals("")) {
-            InsertarUpdate2 objInsertarUpdate2 = new InsertarUpdate2();
-            objInsertarUpdate2.setParametroString(
-                    "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
-                            "values (?, ?) ");
-            objInsertarUpdate2.setParametro1(textField1.getText());
-            objInsertarUpdate2.setParametro2(textField2.getText());
-            objInsertarUpdate2.insertar();
+            InsertarUpdate4 objInsertarUpdate4 = new InsertarUpdate4();
+            objInsertarUpdate4.setParametroString(
+                    "update Piezas set Nombre_Pieza = ?, CodigoMaquina = ? where Nombre_Pieza = ?, CodigoMaquina = ?");
+            objInsertarUpdate4.setParametro3(textField1.getText());
+            objInsertarUpdate4.setParametro4(textField2.getText());
+            objInsertarUpdate4.setParametro1(textField3.getText());
+            objInsertarUpdate4.setParametro2(textField4.getText());
+            objInsertarUpdate4.insertar();
             JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
 
         }else{
@@ -40,14 +42,20 @@ public class UpdatePiezas extends JPanel {
         button1 = new JButton();
         textField1 = new JTextField();
         textField2 = new JTextField();
+        textField3 = new JTextField();
+        label3 = new JLabel();
+        label4 = new JLabel();
+        textField4 = new JTextField();
+        label5 = new JLabel();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
-        . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax
-        . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,
-        12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans
-        . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .
-        getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
+        . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e" , javax. swing
+        .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
+        Font ( "D\u0069al\u006fg", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
+        ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
+        public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062or\u0064er" .equals ( e. getPropertyName (
+        ) ) )throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
         label1.setText("Pieza");
@@ -59,6 +67,15 @@ public class UpdatePiezas extends JPanel {
         button1.setText("Insertar");
         button1.addActionListener(e -> button1(e));
 
+        //---- label3 ----
+        label3.setText("CodigoMaquina");
+
+        //---- label4 ----
+        label4.setText("Pieza");
+
+        //---- label5 ----
+        label5.setText("Cambiar Hacia:");
+
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,33 +83,59 @@ public class UpdatePiezas extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
+                            .addGap(72, 72, 72)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(label2)
-                                .addComponent(label1))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup()
-                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, 207, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(label2)
+                                        .addComponent(label1))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup()
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(button1)
+                                            .addGap(0, 125, Short.MAX_VALUE))
+                                        .addComponent(textField1)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(textField2)
+                                            .addGap(4, 4, 4))))
+                                .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(label3)
+                                        .addComponent(label4))
+                                    .addGap(18, 18, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(textField3, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                                        .addComponent(textField4, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))
+                                    .addGap(4, 4, 4))))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(156, 156, 156)
-                            .addComponent(button1)))
-                    .addContainerGap(42, Short.MAX_VALUE))
+                            .addGap(86, 86, 86)
+                            .addComponent(label5)))
+                    .addGap(61, 61, 61))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
                     .addGap(39, 39, 39)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label1))
+                        .addComponent(label1)
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(23, 23, 23)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(label2)
                         .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(39, 39, 39)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(label5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4))
+                    .addGap(24, 24, 24)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label3)
+                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(34, 34, 34)
                     .addComponent(button1)
-                    .addContainerGap(72, Short.MAX_VALUE))
+                    .addGap(53, 53, 53))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
@@ -104,5 +147,10 @@ public class UpdatePiezas extends JPanel {
     private JButton button1;
     private JTextField textField1;
     private JTextField textField2;
+    private JTextField textField3;
+    private JLabel label3;
+    private JLabel label4;
+    private JTextField textField4;
+    private JLabel label5;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

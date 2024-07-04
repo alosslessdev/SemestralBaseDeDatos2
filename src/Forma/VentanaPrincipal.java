@@ -150,21 +150,7 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
-    private void AMenuMaterialSalida2(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new UpdateMaterialSalida());
-        frame.setVisible(true);
-        frame.pack();
-    }
 
-    private void AMenuMaterialEntrada2(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new UpdateMaterialEntrada());
-        frame.setVisible(true);
-        frame.pack();
-    }
 
     private void AMenuGastos2(ActionEvent e) {
         // TODO add your code here
@@ -189,21 +175,7 @@ public class VentanaPrincipal extends JPanel {
         frame.setVisible(true);
         frame.pack();
     }
-    private void AMenuMaquinas2(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new UpdateMaquinas());
-        frame.setVisible(true);
-        frame.pack();
-    }
 
-    private void AMenuMantenimiento2(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new UpdateMantenimiento());
-        frame.setVisible(true);
-        frame.pack();
-    }
 
     private void AMenuEmpleado2(ActionEvent e) {
         // TODO add your code here
@@ -236,22 +208,17 @@ public class VentanaPrincipal extends JPanel {
         AMenuMantenimiento2 = new JMenuItem();
         AMenuEmpleado2 = new JMenuItem();
         menu1 = new JMenu();
-        cMenuMaterialEntrada = new JMenuItem();
-        cMenuMaterialSalida = new JMenuItem();
         cMenuGastos = new JMenuItem();
         cMenuGanancias = new JMenuItem();
         cMenuPiezas = new JMenuItem();
-        cMenuMaquinas = new JMenuItem();
         cMenuMantenimiento = new JMenuItem();
-        cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER
-        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font
-        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
-        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order"
-        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
+        0, 0 ,0 , 0) ,  "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
+        . BOTTOM, new java. awt .Font ( "D\u0069al\u006fg", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
+        red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
+        beans. PropertyChangeEvent e) { if( "\u0062or\u0064er" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //======== menuBar1 ========
         {
@@ -310,7 +277,6 @@ public class VentanaPrincipal extends JPanel {
                 AMenuMaterialEntrada2.setText("MaterialEntrada");
                 AMenuMaterialEntrada2.addActionListener(e -> {
 			IMenuMaterialEntrada(e);
-			AMenuMaterialEntrada2(e);
 		});
                 menu2.add(AMenuMaterialEntrada2);
 
@@ -318,8 +284,6 @@ public class VentanaPrincipal extends JPanel {
                 AMenuMaterialSalida2.setText("MaterialSalida");
                 AMenuMaterialSalida2.addActionListener(e -> {
 			IMenuMaterialSalida(e);
-			AMenuMaterialSalida2(e);
-			AMenuMaterialSalida2(e);
 		});
                 menu2.add(AMenuMaterialSalida2);
 
@@ -351,7 +315,6 @@ public class VentanaPrincipal extends JPanel {
                 AMenuMaquinas2.setText("Maquinas");
                 AMenuMaquinas2.addActionListener(e -> {
 			iMenuMaquinas(e);
-			AMenuMaquinas2(e);
 		});
                 menu2.add(AMenuMaquinas2);
 
@@ -359,7 +322,6 @@ public class VentanaPrincipal extends JPanel {
                 AMenuMantenimiento2.setText("Mantenimiento");
                 AMenuMantenimiento2.addActionListener(e -> {
 			iMenuMantenimiento(e);
-			AMenuMantenimiento2(e);
 		});
                 menu2.add(AMenuMantenimiento2);
 
@@ -377,16 +339,6 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu1.setText("Consultar");
 
-                //---- cMenuMaterialEntrada ----
-                cMenuMaterialEntrada.setText("MaterialEntrada");
-                cMenuMaterialEntrada.addActionListener(e -> cMenuMaterial(e));
-                menu1.add(cMenuMaterialEntrada);
-
-                //---- cMenuMaterialSalida ----
-                cMenuMaterialSalida.setText("MaterialSalida");
-                cMenuMaterialSalida.addActionListener(e -> cMenuMaterialSalida(e));
-                menu1.add(cMenuMaterialSalida);
-
                 //---- cMenuGastos ----
                 cMenuGastos.setText("Gastos");
                 cMenuGastos.addActionListener(e -> cMenuGastos(e));
@@ -402,20 +354,10 @@ public class VentanaPrincipal extends JPanel {
                 cMenuPiezas.addActionListener(e -> cMenuPiezas(e));
                 menu1.add(cMenuPiezas);
 
-                //---- cMenuMaquinas ----
-                cMenuMaquinas.setText("Maquinas");
-                cMenuMaquinas.addActionListener(e -> cMenuMaquinas(e));
-                menu1.add(cMenuMaquinas);
-
                 //---- cMenuMantenimiento ----
                 cMenuMantenimiento.setText("Mantenimiento");
                 cMenuMantenimiento.addActionListener(e -> cMenuMantenimiento(e));
                 menu1.add(cMenuMantenimiento);
-
-                //---- cMenuEmpleado ----
-                cMenuEmpleado.setText("Empleado");
-                cMenuEmpleado.addActionListener(e -> cMenuEmpleado(e));
-                menu1.add(cMenuEmpleado);
             }
             menuBar1.add(menu1);
         }
@@ -425,7 +367,7 @@ public class VentanaPrincipal extends JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(19, Short.MAX_VALUE)
+                    .addContainerGap(17, Short.MAX_VALUE)
                     .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(76, 76, 76))
         );
@@ -461,13 +403,9 @@ public class VentanaPrincipal extends JPanel {
     private JMenuItem AMenuMantenimiento2;
     private JMenuItem AMenuEmpleado2;
     private JMenu menu1;
-    private JMenuItem cMenuMaterialEntrada;
-    private JMenuItem cMenuMaterialSalida;
     private JMenuItem cMenuGastos;
     private JMenuItem cMenuGanancias;
     private JMenuItem cMenuPiezas;
-    private JMenuItem cMenuMaquinas;
     private JMenuItem cMenuMantenimiento;
-    private JMenuItem cMenuEmpleado;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
