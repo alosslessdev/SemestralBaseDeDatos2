@@ -246,11 +246,12 @@ public class VentanaPrincipal extends JPanel {
         cMenuEmpleado = new JMenuItem();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder ( 0
-        , 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
-        , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red ) ,
-         getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
-        ) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== menuBar1 ========
         {
@@ -307,42 +308,67 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- AMenuMaterialEntrada2 ----
                 AMenuMaterialEntrada2.setText("MaterialEntrada");
-                AMenuMaterialEntrada2.addActionListener(e -> AMenuMaterialEntrada2(e));
+                AMenuMaterialEntrada2.addActionListener(e -> {
+			IMenuMaterialEntrada(e);
+			AMenuMaterialEntrada2(e);
+		});
                 menu2.add(AMenuMaterialEntrada2);
 
                 //---- AMenuMaterialSalida2 ----
                 AMenuMaterialSalida2.setText("MaterialSalida");
-                AMenuMaterialSalida2.addActionListener(e -> AMenuMaterialSalida2(e));
+                AMenuMaterialSalida2.addActionListener(e -> {
+			IMenuMaterialSalida(e);
+			AMenuMaterialSalida2(e);
+			AMenuMaterialSalida2(e);
+		});
                 menu2.add(AMenuMaterialSalida2);
 
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
-                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
+                AMenuGastos2.addActionListener(e -> {
+			IMenuGastos(e);
+			AMenuGastos2(e);
+		});
                 menu2.add(AMenuGastos2);
 
                 //---- AMenuGanancias2 ----
                 AMenuGanancias2.setText("Ganancias");
-                AMenuGanancias2.addActionListener(e -> AMenuGanancias2(e));
+                AMenuGanancias2.addActionListener(e -> {
+			iMenuGanancias(e);
+			AMenuGanancias2(e);
+		});
                 menu2.add(AMenuGanancias2);
 
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
-                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
+                AMenuPiezas2.addActionListener(e -> {
+			iMenuPiezas(e);
+			AMenuPiezas2(e);
+		});
                 menu2.add(AMenuPiezas2);
 
                 //---- AMenuMaquinas2 ----
                 AMenuMaquinas2.setText("Maquinas");
-                AMenuMaquinas2.addActionListener(e -> AMenuMaquinas2(e));
+                AMenuMaquinas2.addActionListener(e -> {
+			iMenuMaquinas(e);
+			AMenuMaquinas2(e);
+		});
                 menu2.add(AMenuMaquinas2);
 
                 //---- AMenuMantenimiento2 ----
                 AMenuMantenimiento2.setText("Mantenimiento");
-                AMenuMantenimiento2.addActionListener(e -> AMenuMantenimiento2(e));
+                AMenuMantenimiento2.addActionListener(e -> {
+			iMenuMantenimiento(e);
+			AMenuMantenimiento2(e);
+		});
                 menu2.add(AMenuMantenimiento2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
-                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
+                AMenuEmpleado2.addActionListener(e -> {
+			iMenuEmpleado(e);
+			AMenuEmpleado2(e);
+		});
                 menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);

@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:37:p, par l:::p {seq {comp label3:::p::p, space u:::p, comp textField3::::241:x}, seq {space :p:68:p, comp button1:::p::p}, seq l {par t {comp label1:::p::p, comp label2:::p::p}, space s:::p, par l:::p {comp textField1::::241:x, comp textField2::::241:x}}}, space ::49:x}}"
-			"$verticalGroup": "par l {seq l {space :p:40:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space :p:17:p, comp button1:::p::p, space ::71:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq {space :p:37:p, par l {seq t {comp label1:::p::p, space u:::p, comp textField1:::p:241:p}, seq t {comp label2:::p::p, space u:::p, comp textField2:::p:241:p}, seq l {par t {comp label4:::p::p, comp label3:::p::p, comp label5::t:p::p}, space u:::p, par l:::p {comp textField3::::241:x, comp textField4::::241:x, comp textField5::l::241:x}}}}, seq l {space :p:155:p, comp button1:::p::p}}, space ::85:x}}"
+			"$verticalGroup": "par l {seq l {space :p:40:p, par b {comp textField1::b:p::p, comp label1::b:p::p}, space s:::p, par l {comp textField2:::p::p, comp label2:::p::p}, space s:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp textField4::b:p::p}, space s:::p, par b {comp label5::b:p::p, comp textField5::b:p::p}, space :::x, comp button1:::p::p, space :p:29:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -19,7 +19,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
-				"text": "Cantidad"
+				"text": "Año"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
@@ -34,9 +34,23 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField3"
 			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Codigo de Salida"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "precio"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 400, 300 )
+			"size": new java.awt.Dimension( 480, 340 )
 		} )
 	}
 }
