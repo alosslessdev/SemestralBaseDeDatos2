@@ -86,14 +86,6 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
-    private void cMenuGanancias(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new ConsultarGanancias());
-        frame.setVisible(true);
-        frame.pack();
-    }
-
     private void cMenuPiezas(ActionEvent e) {
         // TODO add your code here
         JFrame frame = new JFrame();
@@ -160,13 +152,6 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
-    private void AMenuGanancias2(ActionEvent e) {
-        // TODO add your code here
-        JFrame frame = new JFrame();
-        frame.setContentPane(new UpdateGanancias());
-        frame.setVisible(true);
-        frame.pack();
-    }
 
     private void AMenuPiezas2(ActionEvent e) {
         // TODO add your code here
@@ -185,6 +170,11 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
+    private void menuItem4(ActionEvent e) {
+        // TODO add your code here
+    }
+
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - sdf ads
@@ -199,26 +189,25 @@ public class VentanaPrincipal extends JPanel {
         iMenuMantenimiento = new JMenuItem();
         iMenuEmpleado = new JMenuItem();
         menu2 = new JMenu();
-        AMenuMaterialEntrada2 = new JMenuItem();
-        AMenuMaterialSalida2 = new JMenuItem();
         AMenuGastos2 = new JMenuItem();
-        AMenuGanancias2 = new JMenuItem();
         AMenuPiezas2 = new JMenuItem();
-        AMenuMaquinas2 = new JMenuItem();
-        AMenuMantenimiento2 = new JMenuItem();
         AMenuEmpleado2 = new JMenuItem();
         menu1 = new JMenu();
+        cMenuMaterial = new JMenuItem();
+        cMenuMaterialSalida = new JMenuItem();
+        cMenuMaquinas = new JMenuItem();
+        cMenuEmpleado = new JMenuItem();
         cMenuGastos = new JMenuItem();
-        cMenuGanancias = new JMenuItem();
         cMenuPiezas = new JMenuItem();
         cMenuMantenimiento = new JMenuItem();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
-        0, 0 ,0 , 0) ,  "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
-        . BOTTOM, new java. awt .Font ( "D\u0069al\u006fg", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
-        red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
-        beans. PropertyChangeEvent e) { if( "\u0062or\u0064er" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== menuBar1 ========
         {
@@ -273,20 +262,6 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu2.setText("Actualizar");
 
-                //---- AMenuMaterialEntrada2 ----
-                AMenuMaterialEntrada2.setText("MaterialEntrada");
-                AMenuMaterialEntrada2.addActionListener(e -> {
-			IMenuMaterialEntrada(e);
-		});
-                menu2.add(AMenuMaterialEntrada2);
-
-                //---- AMenuMaterialSalida2 ----
-                AMenuMaterialSalida2.setText("MaterialSalida");
-                AMenuMaterialSalida2.addActionListener(e -> {
-			IMenuMaterialSalida(e);
-		});
-                menu2.add(AMenuMaterialSalida2);
-
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
                 AMenuGastos2.addActionListener(e -> {
@@ -295,14 +270,6 @@ public class VentanaPrincipal extends JPanel {
 		});
                 menu2.add(AMenuGastos2);
 
-                //---- AMenuGanancias2 ----
-                AMenuGanancias2.setText("Ganancias");
-                AMenuGanancias2.addActionListener(e -> {
-			iMenuGanancias(e);
-			AMenuGanancias2(e);
-		});
-                menu2.add(AMenuGanancias2);
-
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
                 AMenuPiezas2.addActionListener(e -> {
@@ -310,20 +277,6 @@ public class VentanaPrincipal extends JPanel {
 			AMenuPiezas2(e);
 		});
                 menu2.add(AMenuPiezas2);
-
-                //---- AMenuMaquinas2 ----
-                AMenuMaquinas2.setText("Maquinas");
-                AMenuMaquinas2.addActionListener(e -> {
-			iMenuMaquinas(e);
-		});
-                menu2.add(AMenuMaquinas2);
-
-                //---- AMenuMantenimiento2 ----
-                AMenuMantenimiento2.setText("Mantenimiento");
-                AMenuMantenimiento2.addActionListener(e -> {
-			iMenuMantenimiento(e);
-		});
-                menu2.add(AMenuMantenimiento2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
@@ -339,15 +292,33 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu1.setText("Consultar");
 
+                //---- cMenuMaterial ----
+                cMenuMaterial.setText("MaterialEntrada");
+                cMenuMaterial.addActionListener(e -> {
+			menuItem4(e);
+			cMenuMaterial(e);
+		});
+                menu1.add(cMenuMaterial);
+
+                //---- cMenuMaterialSalida ----
+                cMenuMaterialSalida.setText("MaterialSalida");
+                cMenuMaterialSalida.addActionListener(e -> cMenuMaterialSalida(e));
+                menu1.add(cMenuMaterialSalida);
+
+                //---- cMenuMaquinas ----
+                cMenuMaquinas.setText("Maquinas");
+                cMenuMaquinas.addActionListener(e -> cMenuMaquinas(e));
+                menu1.add(cMenuMaquinas);
+
+                //---- cMenuEmpleado ----
+                cMenuEmpleado.setText("Empleado");
+                cMenuEmpleado.addActionListener(e -> cMenuEmpleado(e));
+                menu1.add(cMenuEmpleado);
+
                 //---- cMenuGastos ----
                 cMenuGastos.setText("Gastos");
                 cMenuGastos.addActionListener(e -> cMenuGastos(e));
                 menu1.add(cMenuGastos);
-
-                //---- cMenuGanancias ----
-                cMenuGanancias.setText("Ganancias");
-                cMenuGanancias.addActionListener(e -> cMenuGanancias(e));
-                menu1.add(cMenuGanancias);
 
                 //---- cMenuPiezas ----
                 cMenuPiezas.setText("Piezas");
@@ -367,7 +338,7 @@ public class VentanaPrincipal extends JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(17, Short.MAX_VALUE)
+                    .addContainerGap(19, Short.MAX_VALUE)
                     .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(76, 76, 76))
         );
@@ -394,17 +365,15 @@ public class VentanaPrincipal extends JPanel {
     private JMenuItem iMenuMantenimiento;
     private JMenuItem iMenuEmpleado;
     private JMenu menu2;
-    private JMenuItem AMenuMaterialEntrada2;
-    private JMenuItem AMenuMaterialSalida2;
     private JMenuItem AMenuGastos2;
-    private JMenuItem AMenuGanancias2;
     private JMenuItem AMenuPiezas2;
-    private JMenuItem AMenuMaquinas2;
-    private JMenuItem AMenuMantenimiento2;
     private JMenuItem AMenuEmpleado2;
     private JMenu menu1;
+    private JMenuItem cMenuMaterial;
+    private JMenuItem cMenuMaterialSalida;
+    private JMenuItem cMenuMaquinas;
+    private JMenuItem cMenuEmpleado;
     private JMenuItem cMenuGastos;
-    private JMenuItem cMenuGanancias;
     private JMenuItem cMenuPiezas;
     private JMenuItem cMenuMantenimiento;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on

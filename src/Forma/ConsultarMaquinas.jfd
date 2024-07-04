@@ -48,7 +48,7 @@ new FormModel {
 				name: "textField4"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 0, 5 )
 			"size": new java.awt.Dimension( 400, 520 )
 		} )
 	}

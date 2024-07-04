@@ -28,7 +28,7 @@ public class ConsultarMaterialSalida extends JPanel {
             objConsultas4.setTitulo(new String[]{"1", "3"});
             objConsultas4.setParametroString(
                     "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
-                            "and NombrePieza = ?");
+                            "or NombrePieza = ?");
             objConsultas4.setParametro1(textField1.getText());
             objConsultas4.setParametro2(textField2.getText());
             objConsultas4.setParametro3(textField3.getText());

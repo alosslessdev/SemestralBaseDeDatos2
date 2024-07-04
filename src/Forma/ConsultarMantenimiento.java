@@ -24,8 +24,8 @@ public class ConsultarMantenimiento extends JPanel {
             Consultas2 objConsultas2 = new Consultas2();
             objConsultas2.setTitulo(new String[]{"1", "3"});
             objConsultas2.setParametroString(
-                    "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
-                            "and NombrePieza = ?");
+                    "select CodigoMaquina, Fecha from Piezas where CodigoMaquina = ? " +
+                            "or Fecha = ?");
             objConsultas2.setParametro1(textField1.getText());
             objConsultas2.setParametro2(textField2.getText());
             table1.setModel(objConsultas2.consultas());
