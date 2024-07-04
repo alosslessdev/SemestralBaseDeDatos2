@@ -26,7 +26,7 @@ public class InsertarMaterialSalida extends JPanel {
                 && !textField4.getText().equals("")) {
             InsertarUpdate4 objInsertarUpdate4 = new InsertarUpdate4();
             objInsertarUpdate4.setParametroString(
-                    "insert into MaterialSalida (SalidaTipo, Peso, Ubicacion, Precio, HorarioSalida, Fecha) " +
+                    "insert into MaterialSalida (SalidaTipo, Peso, Ubicacion, Precio, HorarioSalida, date) " +
                             "values (?, ?, ?, ?, convert(varchar(10), GETDATE(), 108), GETDATE()) ");
             objInsertarUpdate4.setParametro1(textField1.getText());
             objInsertarUpdate4.setParametro2(textField2.getText());

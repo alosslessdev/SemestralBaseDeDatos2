@@ -20,7 +20,7 @@ public class InsertarMaterialEntrada extends JPanel {
         if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
             InsertarUpdate3 objInsertarUpdate3 = new InsertarUpdate3();
             objInsertarUpdate3.setParametroString(
-                    "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
+                    "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, date) " +
                             "values (?, ?, ?, convert(varchar(10), GETDATE(), 108), GETDATE()) ");
             objInsertarUpdate3.setParametro1(textField1.getText());
             objInsertarUpdate3.setParametro2(textField2.getText());

@@ -14,7 +14,10 @@ public class Consultas2 {
     private String parametro1;
     private String parametro2;
     private String parametroString;
+    private int i;
+
     private String [] titulo;
+    private String [] datos;
     private AppLogs objLogs = new AppLogs(Consultas2.class);
 
     public void setTitulo(String[] titulo) {
@@ -51,11 +54,12 @@ public class Consultas2 {
                     if (filas > 0) {
                         resultado.beforeFirst();
                         while(resultado.next()){
-                            String datos []={
-                                    resultado.getString("num_factura"),
-                                    resultado.getString("nombre"),
-                                    resultado.getString("total"),
-                            };
+                            datos = new String[]{
+                                        resultado.getString("num_factura"),
+                                        resultado.getString("nombre"),
+                                        resultado.getString("total"),
+                                };
+
                             consulta.addRow(datos);
                         }
                     }else{
