@@ -19,8 +19,6 @@ public class InsertarUpdate8 {
     private String parametroString;
     private AppLogs objLogs = new AppLogs(InsertarUpdate8.class);
 
-//private AppLogs objLogs = new AppLogs(Insertar.class);
-
     public void setParametro1(String parametro1) {
         this.parametro1 = parametro1;
     }
@@ -66,15 +64,21 @@ public class InsertarUpdate8 {
                 pst.setString(4, parametro4);
                 pst.setString(5, parametro5);
                 pst.setString(6, parametro6);
+                pst.setString(7, parametro7);
+                pst.setString(8, parametro8);
 
                 pst.executeQuery();
 
 
             }catch (SQLException ex){
                 objLogs.errorLogs(ex);
+                //throw new RuntimeException(ex);
+
             }
         } catch (SQLException e) {
-            objLogs.errorLogs(e);
+           objLogs.errorLogs(e);
+           // throw new RuntimeException(e);
+
         }
 
 

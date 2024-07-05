@@ -23,7 +23,7 @@ public class UpdateEmpleado extends JPanel {
                 !textField4.getText().equals("")) {
             InsertarUpdate8 objInsertarUpdate8 = new InsertarUpdate8();
              objInsertarUpdate8.setParametroString(
-                     "update Gastos set Nombre = ?, Apellido = ?, CodigoSucursal = ?, Identificacion = ? " +
+                     "update Empleado set Nombre = ?, Apellido = ?, CodigoSucursal = ?, Identificacion = ? " +
                              "where Nombre = ? or Apellido = ? or CodigoSucursal = ? or Identificacion = ? ");
 
              objInsertarUpdate8.setParametro5(textField1.getText());
@@ -67,12 +67,13 @@ public class UpdateEmpleado extends JPanel {
         label9 = new JLabel();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder. CENTER
-        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .awt .Font
-        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
-        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er"
-        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
+        .swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing
+        .border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
+        Font("Dialo\u0067",java.awt.Font.BOLD,12),java.awt.Color.red
+        ), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
+        public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072".equals(e.getPropertyName(
+        )))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Nombre");
@@ -112,7 +113,7 @@ public class UpdateEmpleado extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(157, 157, 157)
                     .addComponent(button1)
-                    .addContainerGap(162, Short.MAX_VALUE))
+                    .addContainerGap(177, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -124,36 +125,31 @@ public class UpdateEmpleado extends JPanel {
                                 .addComponent(label4))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup()
-                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                                 .addComponent(textField3)
-                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)))
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)))
                         .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(28, Short.MAX_VALUE)
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addComponent(label9)
                                 .addGroup(layout.createParallelGroup()
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(33, 33, 33)
-                                        .addComponent(label7)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(label7))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(31, 31, 31)
-                                        .addComponent(label6)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(textField6, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(label5)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(label6))
+                                    .addComponent(label5)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(34, 34, 34)
-                                        .addComponent(label8)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(label9)
-                                    .addGap(221, 221, 221)))))
+                                        .addComponent(label8))))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup()
+                                .addComponent(textField6, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))))
                     .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
@@ -177,30 +173,22 @@ public class UpdateEmpleado extends JPanel {
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addComponent(label9)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(label8))
-                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(26, 26, 26)
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(label7))
-                        .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label8)
+                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(label6))
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label7)
                         .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
-                            .addComponent(label5))
-                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label6)
+                        .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(label5)
+                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(31, 31, 31)
                     .addComponent(button1)
                     .addGap(54, 54, 54))

@@ -265,26 +265,17 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
-                AMenuGastos2.addActionListener(e -> {
-			IMenuGastos(e);
-			AMenuGastos2(e);
-		});
+                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
                 menu2.add(AMenuGastos2);
 
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
-                AMenuPiezas2.addActionListener(e -> {
-			iMenuPiezas(e);
-			AMenuPiezas2(e);
-		});
+                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
                 menu2.add(AMenuPiezas2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
-                AMenuEmpleado2.addActionListener(e -> {
-			iMenuEmpleado(e);
-			AMenuEmpleado2(e);
-		});
+                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
                 menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);
@@ -295,10 +286,7 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- cMenuMaterial ----
                 cMenuMaterial.setText("MaterialEntrada");
-                cMenuMaterial.addActionListener(e -> {
-			menuItem4(e);
-			cMenuMaterial(e);
-		});
+                cMenuMaterial.addActionListener(e -> cMenuMaterial(e));
                 menu1.add(cMenuMaterial);
 
                 //---- cMenuMaterialSalida ----
