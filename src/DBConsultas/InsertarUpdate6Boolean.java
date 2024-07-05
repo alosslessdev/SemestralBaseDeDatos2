@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertarUpdate6 {
+public class InsertarUpdate6Boolean {
     private String parametro1;
     private String parametro2;
     private String parametro3;
@@ -15,7 +15,7 @@ public class InsertarUpdate6 {
     private Boolean parametro5;
     private Boolean parametro6;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(InsertarUpdate6.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate6Boolean.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);

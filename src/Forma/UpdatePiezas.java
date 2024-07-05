@@ -2,7 +2,6 @@ package Forma;/*
  * Created by JFormDesigner on Sat Jun 29 21:51:10 GMT-05:00 2024
  */
 
-import DBConsultas.InsertarUpdate2;
 import DBConsultas.InsertarUpdate4;
 
 import javax.swing.*;

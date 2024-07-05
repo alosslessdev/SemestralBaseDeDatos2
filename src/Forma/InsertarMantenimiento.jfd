@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space ::13:x, par l {comp label1::t:p::p, comp label6::t:p::p, comp label2::t:p::p, comp label3::t:p::p}, space s:::p, par l {comp checkBox2:::p::p, comp checkBox1::l:p::p, comp textField1:::p:202:p, comp checkBox3:::p::p}}, seq l {space :p:158:p, comp button1:::p::p}, seq l {space :p:37:p, par t {comp label4:::p::p, comp label5:::p::p}, space u:::p, par l {comp textField2:::p:202:p, comp textField3:::p:202:p}}}, space ::48:x}}"
-			"$verticalGroup": "par l {seq l {space :p:17:p, par b {comp checkBox1::b:p::p, comp label1::b:p::p}, space s:::p, par b {comp textField1::b:p::p, comp label6::b:p::p}, space ::22:x, par b {comp checkBox2::b:p::p, comp label2::b:p::p}, space :p:18:p, par b {comp label3::b:p::p, comp checkBox3::b:p::p}, space :p:18:p, par l {comp textField2::l:p::p, comp label4::l:p::p}, space :::p, par l {comp label5:::p::p, comp textField3:::p::p}, space s:::p, comp button1:::p::p, space :p:32:p}}"
+			"$horizontalGroup": "par l {seq {space ::42:x, par l {comp label1::t:p::p, comp label6::t:p::p}, space u:::p, par l {comp textField1:::p:196:p, comp checkBox1:::p::p}, space ::34:x}, seq l {space :p:149:p, comp button1:::p::p, space :::p, comp scrollPane1:::p:200:p, space ::-36:x}, seq l {space :p:81:p, comp label3:::p::p, space u:::p, comp checkBox3:::p::p, space ::201:x}, seq l {space :p:44:p, par t {seq {comp label4:::p::p, space :::p, comp textField3a:::p:202:p}, seq t {par t {comp label5:::p::p, comp label2::t:p::p}, space u:::p, par l {comp checkBox2:::p::p, comp textField2a:::p:202:p}}}, space ::51:x}}"
+			"$verticalGroup": "par l {seq l {space :p:17:p, par l {seq {comp checkBox1:::p::p, space s:::p, comp textField1:::p::p}, seq l {space :p:9:p, comp label1:::p::p, space s:::p, comp label6:::p::p}}, space u:::p, par b {comp checkBox2::b:p::p, comp label2::b:p::p}, space :::x, par l {comp label5:::p::p, comp textField2a:::p::p}, space :p:12:p, par b {comp label3::b:p::p, comp checkBox3::b:p::p}, space u:::p, par b {comp label4::b:p::p, comp textField3a::b:p::p}, par l {seq {space :p:36:p, comp button1:::p::p}, seq l {space u:::p, comp scrollPane1:::p:200:p}}, space :::p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -23,10 +23,12 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
 				name: "checkBox1"
 				"text": "Se Hizo"
+				addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "checkBox1ItemStateChanged", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
 				name: "checkBox2"
 				"text": "text"
+				addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "checkBox2ItemStateChanged", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
 				name: "checkBox3"
@@ -39,12 +41,14 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
 				"text": "CodigoPieza"
+				"enabled": false
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField1"
+				"enabled": false
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "textField3a"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button1"
@@ -54,22 +58,21 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label6"
 				"text": "ResultadoChequeo"
+				"enabled": false
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "textField2a"
+				"enabled": false
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 20, 10 )
-			"size": new java.awt.Dimension( 400, 360 )
-		} )
-		add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-			name: "scrollPane1"
-			add( new FormComponent( "javax.swing.JTable" ) {
-				name: "table1"
-			} )
-		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 105, 420 )
-			"size": new java.awt.Dimension( 200, 200 )
+			"location": new java.awt.Point( 10, 0 )
+			"size": new java.awt.Dimension( 400, 625 )
 		} )
 	}
 }

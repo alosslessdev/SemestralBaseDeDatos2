@@ -4,7 +4,6 @@
 
 package Forma;
 
-import DBConsultas.InsertarUpdate2;
 import DBConsultas.InsertarUpdate4;
 
 import java.awt.event.*;

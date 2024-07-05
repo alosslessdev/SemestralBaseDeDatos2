@@ -7,16 +7,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertarUpdate2 {
-    private String parametro1;
+public class InsertarUpdate2BooleanA {
+    private Boolean parametro1;
     private String parametro2;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(InsertarUpdate2.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate2BooleanA.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);
 
-    public void setParametro1(String parametro1) {
+    public void setParametro1(Boolean parametro1) {
         this.parametro1 = parametro1;
     }
     public void setParametro2(String parametro2) {
@@ -37,7 +37,7 @@ public class InsertarUpdate2 {
             //CONCUR_READ_ONLY
             try(Connection conectar = conexion.getConexion()){
                 PreparedStatement pst = conectar.prepareStatement(sql);
-                pst.setString(1, parametro1);
+                pst.setBoolean(1, parametro1);
                 pst.setString(2, parametro2);
                 pst.executeQuery();
 
