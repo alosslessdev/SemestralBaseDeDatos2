@@ -25,7 +25,15 @@ public class ConsultarEmpleado extends JPanel {
                 || !textField3.getText().equals("")
                 || !textField4.getText().equals("")){
             Consultas4 objConsultas4 = new Consultas4();
-            objConsultas4.setTitulo(new String[]{"1", "3", "2", "4"});
+            objConsultas4.setTitulo(new String[]{"Nombre",
+                    "Apellido",
+                    "Identificacion",
+                    "Codigo de Sucursal"});
+            objConsultas4.setDatos(new String[]{
+                    "Nombre",
+                    "Apellido",
+                    "Identificacion",
+                    "CodigoSucursal"});
             objConsultas4.setParametroString(
                     "select Nombre, Apellido, Identificacion, CodigoSucursal from Empleado where Nombre = ? " +
                             "or Apellido = ? or Identificacion = ? or CodigoSucursal = ?");
@@ -57,14 +65,12 @@ public class ConsultarEmpleado extends JPanel {
         textField4 = new JTextField();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (
-        new javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion"
-        , javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
-        , new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 )
-        , java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
-        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
-        ; }} );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border
+        .EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax.swing.border.TitledBorder.CENTER,javax
+        .swing.border.TitledBorder.BOTTOM,new java.awt.Font("D\u0069alog",java.awt.Font.BOLD,
+        12),java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans
+        .PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".equals(e.
+        getPropertyName()))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Nombre");

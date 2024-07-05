@@ -25,11 +25,17 @@ public class ConsultarMaquinas extends JPanel {
                 || !textField3.getText().equals("")
                 || !textField4.getText().equals("")){
             Consultas4 objConsultas4 = new Consultas4();
-            objConsultas4.setTitulo(new String[]{"1", "3", "2", "4"});
+            objConsultas4.setTitulo(new String[]{"Codigo de Maquina", "Nombre de Maquina", "ID de Gerente",
+                    "ID de Sucursal"});
+            objConsultas4.setDatos(new String[]{
+                    "CodigoMaquina",
+                    "NombreMaquina",
+                    "IDGerente",
+                    "IDSucursal"});
             objConsultas4.setParametroString(
                     "select CodigoMaquina, NombreMaquina, IDGerente, IDSucursal from Maquinas where " +
                             "CodigoMaquina = ? " +
-                            "or NombrePieza = ? or IDGerente = ? or IDSucursal = ?");
+                            "or NombreMaquina = ? or IDGerente = ? or IDSucursal = ?");
             objConsultas4.setParametro1(textField1.getText());
             objConsultas4.setParametro2(textField2.getText());
             objConsultas4.setParametro3(textField3.getText());
@@ -58,11 +64,12 @@ public class ConsultarMaquinas extends JPanel {
         textField4 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0
-        ,0,0,0), "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM
-        ,new java.awt.Font("D\u0069al\u006fg",java.awt.Font.BOLD,12),java.awt.Color.red),
-         getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e
-        ){if("\u0062or\u0064er".equals(e.getPropertyName()))throw new RuntimeException();}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
+        EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing
+        . border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ),
+        java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( )
+        { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () ))
+        throw new RuntimeException( ); }} );
 
         //---- button1 ----
         button1.setText("Consultar");
@@ -105,11 +112,11 @@ public class ConsultarMaquinas extends JPanel {
                                 .addComponent(label2)
                                 .addComponent(label1))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textField3, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textField4, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                                .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))))
                     .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,20 +124,20 @@ public class ConsultarMaquinas extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(48, 48, 48)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label1))
+                        .addComponent(label1)
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label2))
+                        .addComponent(label2)
+                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label3))
+                        .addComponent(label3)
+                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(35, 35, 35)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label4))
+                        .addComponent(label4)
+                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(16, 16, 16)
                     .addComponent(button1)
                     .addGap(18, 18, 18)

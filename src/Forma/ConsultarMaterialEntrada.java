@@ -25,10 +25,15 @@ public class ConsultarMaterialEntrada extends JPanel {
                 || !textField3.getText().equals("")
                 || !textField4.getText().equals("")){
             Consultas4 objConsultas4 = new Consultas4();
-            objConsultas4.setTitulo(new String[]{"1", "3", "2", "4"});
+            objConsultas4.setTitulo(new String[]{"Ubicacion", "Tipo de Entrada", "Fecha", "Horario de Entrada"});
+            objConsultas4.setDatos(new String[]{
+                    "Ubicacion",
+                    "EntradaTipo",
+                    "Fecha",
+                    "HorarioEntrada"});
             objConsultas4.setParametroString(
-                    "select Ubicacion, SalidaTipo, Fecha, HorarioSalida from MaterialSalida where Ubicacion = ? " +
-                            "or SalidaTipo = ? or Fecha = ? or HorarioSalida = ? ");
+                    "select Ubicacion, EntradaTipo, Fecha, HorarioEntrada from MaterialEntrada where Ubicacion = ? " +
+                            "or EntradaTipo = ? or Fecha = ? or HorarioEntrada = ? ");
             objConsultas4.setParametro1(textField1.getText());
             objConsultas4.setParametro2(textField2.getText());
             objConsultas4.setParametro3(textField3.getText());

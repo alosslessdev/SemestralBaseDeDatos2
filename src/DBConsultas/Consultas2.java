@@ -5,10 +5,8 @@ import LogsApp.AppLogs;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Vector;
 
 public class Consultas2 {
     private String parametro1;
@@ -18,8 +16,12 @@ public class Consultas2 {
 
     private String [] titulo;
     private String [] datos;
+    private Vector<String> datosA = new Vector<>();
     private AppLogs objLogs = new AppLogs(Consultas2.class);
 
+    public void setDatos(String[] datos) {
+        this.datos = datos;
+    }
     public void setTitulo(String[] titulo) {
         this.titulo = titulo;
     }
@@ -38,6 +40,7 @@ public class Consultas2 {
         String[] tituloLocal = titulo;
         DefaultTableModel consulta = new DefaultTableModel(null, tituloLocal);
         String sql=parametroString;
+
         try(ConexionSQL conexion= new ConexionSQL()){
             conexion.conectarDb();
             //TYPE_SCROLL_INSENSITIVE moverse hacia adelante y atraz
@@ -54,16 +57,14 @@ public class Consultas2 {
                     if (filas > 0) {
                         resultado.beforeFirst();
                         while(resultado.next()){
-                            datos = new String[]{
-                                        resultado.getString("num_factura"),
-                                        resultado.getString("nombre"),
-                                        resultado.getString("total"),
-                                };
+                            for(i=0;i<datos.length;i++) {
+                                datosA.add(resultado.getString(datos[i]));
+                            }
+                            consulta.addRow(datosA);
 
-                            consulta.addRow(datos);
                         }
                     }else{
-                        JOptionPane.showMessageDialog(null, "No hay datos para la fecha ","Info",1);
+                        JOptionPane.showMessageDialog(null, "No hay datos para la fecha ","Info", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             }catch (Exception e){
@@ -73,5 +74,8 @@ public class Consultas2 {
             objLogs.errorLogs(ex);
         }
         return consulta;
+    }
+    public void clear (){
+        datosA.clear();
     }
 }

@@ -9,15 +9,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Vector;
 
 public class Consultas3 {
     private String parametro1;
     private String parametro2;
     private String parametro3;
     private String parametroString;
+    private int i;
+
     private String [] titulo;
+    private String [] datos;
+    private Vector<String> datosA = new Vector<>();
     private AppLogs objLogs = new AppLogs(Consultas3.class);
 
+    public void setDatos(String[] datos) {
+        this.datos = datos;
+    }
     public void setTitulo(String[] titulo) {
         this.titulo = titulo;
     }
@@ -56,12 +64,10 @@ public class Consultas3 {
                     if (filas > 0) {
                         resultado.beforeFirst();
                         while(resultado.next()){
-                            String datos []={
-                                    resultado.getString("num_factura"),
-                                    resultado.getString("nombre"),
-                                    resultado.getString("total"),
-                            };
-                            consulta.addRow(datos);
+                            for(i=0;i<datos.length;i++) {
+                                datosA.add(resultado.getString(datos[i]));
+                            }
+                            consulta.addRow(datosA);
                         }
                     }else{
                         JOptionPane.showMessageDialog(null, "No hay datos para la fecha ","Info",1);
@@ -74,5 +80,8 @@ public class Consultas3 {
             objLogs.errorLogs(ex);
         }
         return consulta;
+    }
+    public void clear (){
+        datosA.clear();
     }
 }

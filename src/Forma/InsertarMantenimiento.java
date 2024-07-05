@@ -4,6 +4,7 @@
 
 package Forma;
 
+import DBConsultas.Consultas2;
 import DBConsultas.InsertarUpdate6;
 
 import java.awt.event.*;
@@ -23,8 +24,8 @@ public class InsertarMantenimiento extends JPanel {
         if (!textField1.getText().equals("") && !textField2.getText().equals("") && !textField3.getText().equals("")) {
             InsertarUpdate6 objInsertarUpdate6 = new InsertarUpdate6();
             objInsertarUpdate6.setParametroString(
-                    "insert into MaterialEntrada (EntradaTipo, EntradaPeso, EntradaOrigen, HorarioEntrada, Fecha) " +
-                            "values (?, ?, ?, ?, ?, ? ");
+                    "insert into MantenimientoMaquina (SeHizoLimpieza, CodigoMaquina, Fecha) " +
+                            "values (?, ?, GETDATE()) ");
             objInsertarUpdate6.setParametro1(textField1.getText());
             objInsertarUpdate6.setParametro2(textField2.getText());
             objInsertarUpdate6.setParametro3(textField3.getText());
@@ -32,6 +33,31 @@ public class InsertarMantenimiento extends JPanel {
             objInsertarUpdate6.setParametro5(checkBox2.isSelected());
             objInsertarUpdate6.setParametro6(checkBox3.isSelected());
             objInsertarUpdate6.insertar();
+
+            if (checkBox1.equals(true)) {
+                Consultas2 objConsultas2 = new Consultas2();
+                objInsertarUpdate6.setParametroString("select NumeroMantenimiento from (select NumeroMantenimiento, " +
+                        "ROW_ORDER () OVER (order by NumeroMantenimiento Desc) as rn from MantenimientoMaquina) as " +
+                        "subquery where rn=1; ");
+                objInsertarUpdate6.insertar();
+                table1.setModel(objConsultas2.consultas());
+                int temp = (int) table1.getValueAt(1, 1);
+
+                objInsertarUpdate6.setParametroString(
+                        "insert into Chequeo (ResultadoChequeo, NumeroMantenimiento) " +
+                                "values (?, ?) ");
+                objInsertarUpdate6.setParametro4(checkBox1.isSelected());
+
+                objInsertarUpdate6.insertar();
+            }
+
+            objInsertarUpdate6.setParametroString(
+                    "insert into Cambios (CodigoMaquina, CodigoPieza) " +
+                            "values (?, ?) ");
+
+            objInsertarUpdate6.insertar();
+
+
             JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
 
         }else{
@@ -55,14 +81,17 @@ public class InsertarMantenimiento extends JPanel {
         button1 = new JButton();
         label6 = new JLabel();
         textField3 = new JTextField();
+        scrollPane1 = new JScrollPane();
+        table1 = new JTable();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border
-        .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER ,javax
-        . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,
-        12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans
-        .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e.
-        getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new
+        javax . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e" , javax
+        . swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java
+        . awt .Font ( "Dialo\u0067", java .awt . Font. BOLD ,12 ) ,java . awt
+        . Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .
+        PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "borde\u0072" .
+        equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
         label1.setText("Chequeo");
@@ -102,7 +131,7 @@ public class InsertarMantenimiento extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(14, Short.MAX_VALUE)
+                            .addContainerGap(13, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup()
                                 .addComponent(label1, GroupLayout.Alignment.TRAILING)
                                 .addComponent(label6, GroupLayout.Alignment.TRAILING)
@@ -126,7 +155,7 @@ public class InsertarMantenimiento extends JPanel {
                             .addGroup(layout.createParallelGroup()
                                 .addComponent(textField2, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))))
-                    .addContainerGap(49, Short.MAX_VALUE))
+                    .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -159,6 +188,11 @@ public class InsertarMantenimiento extends JPanel {
                     .addComponent(button1)
                     .addGap(32, 32, 32))
         );
+
+        //======== scrollPane1 ========
+        {
+            scrollPane1.setViewportView(table1);
+        }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
@@ -177,5 +211,7 @@ public class InsertarMantenimiento extends JPanel {
     private JButton button1;
     private JLabel label6;
     private JTextField textField3;
+    private JScrollPane scrollPane1;
+    private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

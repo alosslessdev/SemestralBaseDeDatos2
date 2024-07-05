@@ -19,7 +19,7 @@ public class InsertarUpdate10 {
     private String parametro9;
     private String parametro10;
     private String parametroString;
-    private AppLogs objLogs = new AppLogs(InsertarUpdate6.class);
+    private AppLogs objLogs = new AppLogs(InsertarUpdate10.class);
 
 
     //private AppLogs objLogs = new AppLogs(Insertar.class);

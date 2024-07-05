@@ -7,6 +7,7 @@ package Forma;
 import DBConsultas.Consultas2;
 
 import java.awt.event.*;
+import java.sql.SQLException;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -22,13 +23,17 @@ public class ConsultarPiezas extends JPanel {
         // TODO add your code here
         if (!textField1.getText().equals("") || !textField2.getText().equals("")){
             Consultas2 objConsultas2 = new Consultas2();
-            objConsultas2.setTitulo(new String[]{"1", "3"});
+            objConsultas2.setTitulo(new String[]{"Codigo de Maquina", "Nombre de Pieza"});
+            objConsultas2.setDatos(new String[]{
+                    "CodigoMaquina",
+                    "NombrePieza"});
             objConsultas2.setParametroString(
                     "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
                             "or NombrePieza = ?");
             objConsultas2.setParametro1(textField1.getText());
             objConsultas2.setParametro2(textField2.getText());
             table1.setModel(objConsultas2.consultas());
+            objConsultas2.clear();
         }else{
             //impresionDialogo("El campo esta en blanco", "Sin datos", 1);
         }
@@ -47,12 +52,12 @@ public class ConsultarPiezas extends JPanel {
         table1 = new JTable();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
-        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e" , javax. swing .border . TitledBorder. CENTER ,javax . swing
-        . border .TitledBorder . BOTTOM, new java. awt .Font ( "Dialo\u0067", java .awt . Font. BOLD ,12 ) ,
-        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
-        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "borde\u0072" .equals ( e. getPropertyName () ) )
-        throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border
+        . EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax
+        . swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,
+        12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans
+        . PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .
+        getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- label1 ----
         label1.setText("text");

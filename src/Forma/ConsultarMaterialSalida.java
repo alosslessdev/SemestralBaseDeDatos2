@@ -25,10 +25,15 @@ public class ConsultarMaterialSalida extends JPanel {
                 || !textField3.getText().equals("")
                 || !textField4.getText().equals("")){
             Consultas4 objConsultas4 = new Consultas4();
-            objConsultas4.setTitulo(new String[]{"1", "3"});
+            objConsultas4.setTitulo(new String[]{"Ubicacion", "Tipo de salida", "Fecha", "Horario de salida"});
+            objConsultas4.setDatos(new String[]{
+                    "Ubicacion",
+                    "SalidaTipo",
+                    "Fecha",
+                    "HorarioSalida"});
             objConsultas4.setParametroString(
-                    "select CodigoMaquina, NombrePieza from Piezas where CodigoMaquina = ? " +
-                            "or NombrePieza = ?");
+                    "select Ubicacion, SalidaTipo, Fecha, HorarioSalida from MaterialSalida where Ubicacion = ? " +
+                            "or SalidaTipo = ? or Fecha = ? or HorarioSalida = ? ");;
             objConsultas4.setParametro1(textField1.getText());
             objConsultas4.setParametro2(textField2.getText());
             objConsultas4.setParametro3(textField3.getText());
@@ -57,12 +62,12 @@ public class ConsultarMaterialSalida extends JPanel {
         table1 = new JTable();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder
-        ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border
-        .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt
-        . Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void
-        propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( )
-        ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
+        ( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing. border
+        . TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
+        propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( )
+        ; }} );
 
         //---- label1 ----
         label1.setText("text");
