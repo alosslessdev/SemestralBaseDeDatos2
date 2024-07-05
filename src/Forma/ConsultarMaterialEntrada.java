@@ -62,26 +62,24 @@ public class ConsultarMaterialEntrada extends JPanel {
         table1 = new JTable();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder (
-        new javax . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn"
-        , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM
-        , new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 )
-        ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener(
-        new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
-        ) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( )
-        ;} } );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border
+        .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax
+        . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,
+        12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans
+        .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e.
+        getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
-        label1.setText("text");
+        label1.setText("Ubicacion");
 
         //---- label2 ----
-        label2.setText("text");
+        label2.setText("Tipo de Entrada");
 
         //---- label3 ----
-        label3.setText("text");
+        label3.setText("Fecha");
 
         //---- label4 ----
-        label4.setText("text");
+        label4.setText("Horario de Entrada");
 
         //---- button1 ----
         button1.setText("Consultar");
@@ -96,26 +94,6 @@ public class ConsultarMaterialEntrada extends JPanel {
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(59, 59, 59)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(label4)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(label3)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField3))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(label2)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField2))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(label1)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField1)))
-                    .addContainerGap(68, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(24, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
@@ -125,26 +103,44 @@ public class ConsultarMaterialEntrada extends JPanel {
                         .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE)
                             .addGap(17, 17, 17))))
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup()
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(73, 73, 73)
+                            .addComponent(label1))
+                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup()
+                                .addComponent(label2, GroupLayout.Alignment.TRAILING)
+                                .addComponent(label3, GroupLayout.Alignment.TRAILING)
+                                .addComponent(label4, GroupLayout.Alignment.TRAILING))))
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                        .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                        .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                        .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                        .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                    .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
                     .addGap(28, 28, 28)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                    .addGroup(layout.createParallelGroup()
                         .addComponent(label1)
                         .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label2)
-                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label2))
                     .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label3)
-                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label3))
                     .addGap(24, 24, 24)
-                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label4)
-                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4))
                     .addGap(18, 18, 18)
                     .addComponent(button1)
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)

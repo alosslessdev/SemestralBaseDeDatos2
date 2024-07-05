@@ -16,7 +16,7 @@ public class VentanaPrincipal extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Forma");
+        JFrame frame = new JFrame("Ventana Principal");
         frame.setContentPane(new VentanaPrincipal());
         frame.pack();
         frame.setVisible(true);
@@ -24,7 +24,7 @@ public class VentanaPrincipal extends JPanel {
     
     private void iMenuGanancias(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Ganancias");
         frame.setContentPane(new InsertarGanancias());
         frame.setVisible(true);
         frame.pack();
@@ -32,7 +32,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void iMenuPiezas(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Piezas");
         frame.setContentPane(new InsertarPiezas());
         frame.setVisible(true);
         frame.pack();
@@ -40,7 +40,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void iMenuMaquinas(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Maquinas");
         frame.setContentPane(new InsertarMaquinas());
         frame.setVisible(true);
         frame.pack();
@@ -48,7 +48,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void iMenuMantenimiento(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Mantenimiento");
         frame.setContentPane(new InsertarMantenimiento());
         frame.setVisible(true);
         frame.pack();
@@ -56,7 +56,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void iMenuEmpleado(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Empleado");
         frame.setContentPane(new InsertarEmpleado());
         frame.setVisible(true);
         frame.pack();
@@ -64,7 +64,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuMaterial(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Material de Entrada");
         frame.setContentPane(new ConsultarMaterialEntrada());
         frame.setVisible(true);
         frame.pack();
@@ -72,7 +72,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuMaterialSalida(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Material de Salida");
         frame.setContentPane(new ConsultarMaterialSalida());
         frame.setVisible(true);
         frame.pack();    }
@@ -80,7 +80,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuGastos(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Gastos");
         frame.setContentPane(new ConsultarGastos());
         frame.setVisible(true);
         frame.pack();
@@ -88,7 +88,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuPiezas(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Piezas");
         frame.setContentPane(new ConsultarPiezas());
         frame.setVisible(true);
         frame.pack();
@@ -96,7 +96,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuMaquinas(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Maquinas");
         frame.setContentPane(new ConsultarMaquinas());
         frame.setVisible(true);
         frame.pack();
@@ -104,7 +104,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuMantenimiento(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Mantenimiento");
         frame.setContentPane(new ConsultarMantenimiento());
         frame.setVisible(true);
         frame.pack();
@@ -112,7 +112,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void cMenuEmpleado(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Empleado");
         frame.setContentPane(new ConsultarEmpleado());
         frame.setVisible(true);
         frame.pack();
@@ -120,7 +120,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void IMenuMaterialEntrada(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Consultar Material de Entrada");
         frame.setContentPane(new InsertarMaterialEntrada());
         frame.setVisible(true);
         frame.pack();
@@ -128,7 +128,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void IMenuMaterialSalida(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Material de Salida");
         frame.setContentPane(new InsertarMaterialSalida());
         frame.setVisible(true);
         frame.pack();
@@ -136,7 +136,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void IMenuGastos(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Insertar Gastos");
         frame.setContentPane(new InsertarGastos());
         frame.setVisible(true);
         frame.pack();
@@ -146,7 +146,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void AMenuGastos2(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Actualizar Gastos");
         frame.setContentPane(new UpdateGastos());
         frame.setVisible(true);
         frame.pack();
@@ -155,7 +155,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void AMenuPiezas2(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Actualizar Piezas");
         frame.setContentPane(new UpdatePiezas());
         frame.setVisible(true);
         frame.pack();
@@ -164,7 +164,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void AMenuEmpleado2(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Actualizar Empleado");
         frame.setContentPane(new UpdateEmpleado());
         frame.setVisible(true);
         frame.pack();

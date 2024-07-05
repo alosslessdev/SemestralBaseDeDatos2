@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :p:17:p, par l {seq l {space :p:140:p, comp button1:::p::p}, comp scrollPane1::l:p:359:p, seq {space :p:8:p, par t {comp label1:::p::p, comp label4::t:p::p, comp label3::t:p::p, comp label2::t:p::p}, space :p:33:p, par l {comp textField3:::::x, comp textField1::l:::x, comp textField2::l:::x, comp textField4::l:::x}}}, space :p:304:p}}"
-			"$verticalGroup": "par l {seq l {space :p:43:p, par l {comp textField3::l:p::p, comp label1::l:p::p}, space :::x, par l {comp textField1:::p::p, comp label2:::p::p}, space s:::p, par l {comp textField4:::p::p, comp label3:::p::p}, space :p:16:p, par l {comp textField2:::p::p, comp label4:::p::p}, space ::103:x, comp button1:::p::p, space u:::p, comp scrollPane1:::p:152:p, space :p:15:p}}"
+			"$horizontalGroup": "par l {seq t {par t {seq {space ::39:x, comp scrollPane1:::p:359:p}, seq {space :p:52:p, par t {comp label1:::p::p, comp label2::t:p::p, comp label4::t:p::p, comp label3:::p::p}, space :::p, par l {comp textField4::t::257:x, comp textField1::t::257:x, comp textField3::t::257:x, comp textField2::l::257:x}}}, space :27:27:p}, seq l {space :p:164:p, comp button1:::p::p, space ::167:x}}"
+			"$verticalGroup": "par l {seq l {space :p:43:p, par l {comp textField1::l:p::p, comp label1::l:p::p}, space :::x, par l {comp textField2::l:p::p, comp label2::l:p::p}, space u:::p, par l {comp label3:::p::p, comp textField3:::p::p}, space u:::p, par l {comp label4:::p::p, comp textField4:::p::p}, space :p:26:p, comp scrollPane1:::p:152:p, space :p:35:p, comp button1:::p::p, space :p:69:p}}"
 		} ) {
 			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -30,9 +30,6 @@ new FormModel {
 				name: "label2"
 				"text": "Apellido"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
-			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
 				"text": "Identificacion"
@@ -47,9 +44,12 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "textField4"
 			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 185, 10 )
-			"size": new java.awt.Dimension( 425, 535 )
+			"location": new java.awt.Point( 55, 20 )
+			"size": new java.awt.Dimension( 425, 505 )
 		} )
 	}
 }

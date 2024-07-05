@@ -22,14 +22,26 @@ public class ConsultarGastos extends JPanel {
         // TODO add your code here
         if (!textField1.getText().equals("") || !textField2.getText().equals("")){
             Consultas2 objConsultas2 = new Consultas2();
-            objConsultas2.setTitulo(new String[]{"1", "3"});
+            objConsultas2.setTitulo(new String[]{"CodigoGasto",
+                    "EnergiaElectrica",
+                    "Mantenimiento",
+                    "IDGerente",
+                    "Mes",
+                    "Año"});
             objConsultas2.setDatos(new String[]{
-                    "Ubicacion",
-                    "SalidaTipo",
-                    "Fecha",
-                    "HorarioSalida"});
+                    "CodigoGasto",
+                    "EnergiaElectrica",
+                    "Mantenimiento",
+                    "IDGerente",
+                    "Mes",
+                    "Año"});
             objConsultas2.setParametroString(
-                    "select Mes, Año from Gastos where Mes = ? " +
+                    "select CodigoGasto, " +
+                            "EnergiaElectrica " +
+                            "Mantenimiento " +
+                            "IDGerente " +
+                            "Mes " +
+                            "Año from Gastos where Mes = ? " +
                             "or Año = ?");
             objConsultas2.setParametro1(textField1.getText());
             objConsultas2.setParametro2(textField2.getText());
@@ -52,13 +64,13 @@ public class ConsultarGastos extends JPanel {
         textField2 = new JTextField();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax .
-        swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border
-        . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog"
-        , java .awt . Font. BOLD ,12 ) ,java . awt. Color .red ) , getBorder
-        () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java
-        . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException
-        ( ) ;} } );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
+        .swing.border.EmptyBorder(0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing
+        .border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
+        Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt.Color.red
+        ), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
+        public void propertyChange(java.beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName(
+        )))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Mes");
@@ -82,21 +94,22 @@ public class ConsultarGastos extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGap(41, 41, 41)
                             .addGroup(layout.createParallelGroup()
                                 .addComponent(label1)
                                 .addComponent(label2))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup()
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 193, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button1))))
-                    .addContainerGap(23, Short.MAX_VALUE))
+                            .addGap(24, 24, 24)
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(textField1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                                .addComponent(textField2, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(144, 144, 144)
+                            .addComponent(button1)))
+                    .addContainerGap(65, Short.MAX_VALUE))
+                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGap(0, 22, Short.MAX_VALUE)
+                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE)
+                    .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -109,11 +122,11 @@ public class ConsultarGastos extends JPanel {
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label2)
                         .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
                     .addComponent(button1)
-                    .addGap(46, 46, 46)
+                    .addGap(28, 28, 28)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
-                    .addGap(27, 27, 27))
+                    .addContainerGap(41, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }

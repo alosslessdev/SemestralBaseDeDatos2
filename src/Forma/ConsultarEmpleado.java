@@ -58,19 +58,18 @@ public class ConsultarEmpleado extends JPanel {
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         label2 = new JLabel();
-        textField2 = new JTextField();
         label3 = new JLabel();
         label4 = new JLabel();
         textField3 = new JTextField();
         textField4 = new JTextField();
+        textField2 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border
-        .EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax.swing.border.TitledBorder.CENTER,javax
-        .swing.border.TitledBorder.BOTTOM,new java.awt.Font("D\u0069alog",java.awt.Font.BOLD,
-        12),java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans
-        .PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".equals(e.
-        getPropertyName()))throw new RuntimeException();}});
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(
+        0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder
+        .BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt.Color.
+        red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.
+        beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Nombre");
@@ -97,52 +96,54 @@ public class ConsultarEmpleado extends JPanel {
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(17, 17, 17)
-                    .addGroup(layout.createParallelGroup()
+                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(140, 140, 140)
-                            .addComponent(button1))
-                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(39, Short.MAX_VALUE)
+                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(8, 8, 8)
+                            .addGap(52, 52, 52)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(label1)
+                                .addComponent(label2)
                                 .addComponent(label4)
-                                .addComponent(label3)
-                                .addComponent(label2))
-                            .addGap(33, 33, 33)
+                                .addComponent(label3))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup()
-                                .addComponent(textField3)
-                                .addComponent(textField1)
-                                .addComponent(textField2)
-                                .addComponent(textField4))))
-                    .addGap(304, 304, 304))
+                                .addComponent(textField4, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                                .addComponent(textField1, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                                .addComponent(textField3, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))))
+                    .addGap(27, 27, 27))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(164, 164, 164)
+                    .addComponent(button1)
+                    .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
                     .addGap(43, 43, 43)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label1))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label2))
-                    .addGap(18, 18, 18)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label3))
-                    .addGap(16, 16, 16)
-                    .addGroup(layout.createParallelGroup()
                         .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label4))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                    .addComponent(button1)
+                        .addComponent(label2))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label3)
+                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label4)
+                        .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(26, 26, 26)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-                    .addGap(15, 15, 15))
+                    .addGap(35, 35, 35)
+                    .addComponent(button1)
+                    .addGap(69, 69, 69))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
@@ -155,10 +156,10 @@ public class ConsultarEmpleado extends JPanel {
     private JScrollPane scrollPane1;
     private JTable table1;
     private JLabel label2;
-    private JTextField textField2;
     private JLabel label3;
     private JLabel label4;
     private JTextField textField3;
     private JTextField textField4;
+    private JTextField textField2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }

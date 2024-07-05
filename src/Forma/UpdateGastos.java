@@ -18,8 +18,8 @@ public class UpdateGastos extends JPanel {
         if (!textField1.getText().equals("") && !textField2.getText().equals("")) {
             InsertarUpdate10 objInsertarUpdate10 = new InsertarUpdate10();
             objInsertarUpdate10.setParametroString(
-                    "update Gastos set EnergiaElectrica = ?, Mantenimiento = ?, IDGerente = ?, Mes = ?, Año = ?" +
-                            " EnergiaElectrica = ?, Mantenimiento = ?, IDGerente = ?, Mes = ?, Año = ?");
+                    "update Gastos set EnergiaElectrica = ?, Mantenimiento = ?, IDGerente = ?, Mes = ?, Año = ? " +
+                            "where EnergiaElectrica = ? or Mantenimiento = ? or IDGerente = ? or Mes = ? or Año = ? ");
             objInsertarUpdate10.setParametro6(textField1.getText());
             objInsertarUpdate10.setParametro7(textField2.getText());
             objInsertarUpdate10.setParametro8(textField3.getText());

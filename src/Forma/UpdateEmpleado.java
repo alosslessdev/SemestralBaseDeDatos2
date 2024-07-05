@@ -3,6 +3,7 @@ package Forma;/*
  */
 
 import DBConsultas.InsertarUpdate6NoBoolean;
+import DBConsultas.InsertarUpdate8;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -20,16 +21,21 @@ public class UpdateEmpleado extends JPanel {
         if (!textField1.getText().equals("") && !textField2.getText().equals("") &&
                 !textField3.getText().equals("") &&
                 !textField4.getText().equals("")) {
-            InsertarUpdate6NoBoolean objInsertarUpdate6NoBoolean = new InsertarUpdate6NoBoolean();
-            objInsertarUpdate6NoBoolean.setParametroString(
-                    "insert into Gastos (EnergiaElectrica, Mantenimiento, IDGerente, Mes) " +
-                            "values (?, ?, ?, ?)");
+            InsertarUpdate8 objInsertarUpdate8 = new InsertarUpdate8();
+             objInsertarUpdate8.setParametroString(
+                     "update Gastos set Nombre = ?, Apellido = ?, CodigoSucursal = ?, Identificacion = ? " +
+                             "where Nombre = ? or Apellido = ? or CodigoSucursal = ? or Identificacion = ? ");
 
-            objInsertarUpdate6NoBoolean.setParametro1(textField1.getText());
-            objInsertarUpdate6NoBoolean.setParametro2(textField2.getText());
-            objInsertarUpdate6NoBoolean.setParametro3(textField3.getText());
-            objInsertarUpdate6NoBoolean.setParametro4(textField4.getText());
-            objInsertarUpdate6NoBoolean.insertar();
+             objInsertarUpdate8.setParametro5(textField1.getText());
+             objInsertarUpdate8.setParametro6(textField2.getText());
+             objInsertarUpdate8.setParametro7(textField3.getText());
+             objInsertarUpdate8.setParametro8(textField4.getText());
+
+             objInsertarUpdate8.setParametro1(textField5.getText());
+             objInsertarUpdate8.setParametro2(textField6.getText());
+             objInsertarUpdate8.setParametro3(textField7.getText());
+             objInsertarUpdate8.setParametro4(textField8.getText());
+             objInsertarUpdate8.insertar();
             JOptionPane.showMessageDialog(null, "Operacion completada con exito", "Mensaje", 1);
 
         }else{
@@ -61,13 +67,12 @@ public class UpdateEmpleado extends JPanel {
         label9 = new JLabel();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
-        .swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax.swing
-        .border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
-        Font("D\u0069alog",java.awt.Font.BOLD,12),java.awt.Color.red
-        ), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
-        public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".equals(e.getPropertyName(
-        )))throw new RuntimeException();}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- label1 ----
         label1.setText("Nombre");
@@ -110,32 +115,7 @@ public class UpdateEmpleado extends JPanel {
                     .addContainerGap(162, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(40, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup()
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(33, 33, 33)
-                                    .addComponent(label7)
-                                    .addGap(12, 12, 12)
-                                    .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(31, 31, 31)
-                                    .addComponent(label6)
-                                    .addGap(12, 12, 12)
-                                    .addComponent(textField6, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(label5)
-                                    .addGap(12, 12, 12)
-                                    .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(34, 34, 34)
-                                    .addGroup(layout.createParallelGroup()
-                                        .addComponent(label9)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(label8)
-                                            .addGap(12, 12, 12)
-                                            .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))))))
-                        .addGroup(layout.createSequentialGroup()
+                        .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(40, 40, 40)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(label1)
@@ -147,7 +127,33 @@ public class UpdateEmpleado extends JPanel {
                                 .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                                 .addComponent(textField3)
                                 .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))))
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap(28, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup()
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(33, 33, 33)
+                                        .addComponent(label7)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(textField7, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(label6)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(textField6, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(label5)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(34, 34, 34)
+                                        .addComponent(label8)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label9)
+                                    .addGap(221, 221, 221)))))
                     .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
@@ -171,7 +177,7 @@ public class UpdateEmpleado extends JPanel {
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addComponent(label9)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
                             .addGap(8, 8, 8)

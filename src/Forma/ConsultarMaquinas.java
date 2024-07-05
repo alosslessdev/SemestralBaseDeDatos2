@@ -64,12 +64,12 @@ public class ConsultarMaquinas extends JPanel {
         textField4 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
-        border.EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax.swing.border.TitledBorder.CENTER
-        ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("D\u0069alog",java.awt.Font
-        .BOLD,12),java.awt.Color.red), getBorder())); addPropertyChangeListener(
-        new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order"
-        .equals(e.getPropertyName()))throw new RuntimeException();}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
+        EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing
+        . border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ),
+        java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( )
+        { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .equals (e .getPropertyName () ))
+        throw new RuntimeException( ); }} );
 
         //---- button1 ----
         button1.setText("Consultar");
@@ -81,31 +81,25 @@ public class ConsultarMaquinas extends JPanel {
         }
 
         //---- label1 ----
-        label1.setText("text");
+        label1.setText("Codigo de Maquina");
 
         //---- label2 ----
-        label2.setText("text");
+        label2.setText("Nombre de Maquina");
 
         //---- label3 ----
-        label3.setText("text");
+        label3.setText("ID de Gerente");
 
         //---- label4 ----
-        label4.setText("text");
+        label4.setText("ID de Sucursal");
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
+                    .addGap(42, 42, 42)
                     .addGroup(layout.createParallelGroup()
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(148, 148, 148)
-                            .addComponent(button1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(19, 19, 19)
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(42, 42, 42)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(label4)
                                 .addComponent(label3)
@@ -116,8 +110,15 @@ public class ConsultarMaquinas extends JPanel {
                                 .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                                 .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                                 .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE))))
-                    .addContainerGap(22, Short.MAX_VALUE))
+                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(38, 38, 38)
+                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(46, Short.MAX_VALUE))
+                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(213, Short.MAX_VALUE)
+                    .addComponent(button1)
+                    .addGap(193, 193, 193))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -140,9 +141,9 @@ public class ConsultarMaquinas extends JPanel {
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(16, 16, 16)
                     .addComponent(button1)
-                    .addGap(18, 18, 18)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 250, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap(28, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }

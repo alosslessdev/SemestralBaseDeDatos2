@@ -54,27 +54,28 @@ public class InsertarMantenimiento extends JPanel {
 
             if (checkBox1.isSelected()) {
                 ConsultasParameterLess objConsultasParameterLess = new ConsultasParameterLess();
+                objConsultasParameterLess.setTitulo(new String[]{"NumeroMantenimiento"});
                 objConsultasParameterLess.setDatos(new String[]{
                         "NumeroMantenimiento"});
                 objConsultasParameterLess.setParametroString("select NumeroMantenimiento from (select NumeroMantenimiento, " +
                         "ROW_NUMBER() OVER (order by NumeroMantenimiento Desc) as rn from MantenimientoMaquina) as " +
                         "subquery where rn=1 ");
-                objConsultasParameterLess.consultas();
                 table1.setModel(objConsultasParameterLess.consultas());
-                int temp = (int) table1.getValueAt(0, 0);
+                String temp = (String) table1.getValueAt(0, 0);
+                int tempInt = Integer.parseInt(temp);
 
                 objInsertarUpdate2BooleanA.setParametroString(
                         "insert into Chequeo (ResultadoChequeo, NumeroMantenimiento) " +
                                 "values (?, ?) ");
                 objInsertarUpdate2BooleanA.setParametro1(checkBox1.isSelected());
-                objInsertarUpdate2BooleanA.setParametro2(String.valueOf(temp));
+                objInsertarUpdate2BooleanA.setParametro2(String.valueOf(tempInt));
                 objInsertarUpdate2BooleanA.insertar();
             }
 
             if (checkBox2.isSelected()) {
                 InsertarUpdate2NoBoolean objInsertarUpdate2NoBoolean = new InsertarUpdate2NoBoolean();
 
-                objInsertarUpdate2BooleanA.setParametroString(
+                objInsertarUpdate2NoBoolean.setParametroString(
                     "insert into Cambios (CodigoMaquina, CodigoPieza) " +
                             "values (?, ?) ");
                 objInsertarUpdate2NoBoolean.setParametro1(textField3a.getText());
@@ -110,13 +111,11 @@ public class InsertarMantenimiento extends JPanel {
         table1 = new JTable();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
-        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder
-        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .
-        awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
-        ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
-        ;
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(
+        0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder
+        .BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt.Color.
+        red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.
+        beans.PropertyChangeEvent e){if("\u0062ord\u0065r".equals(e.getPropertyName()))throw new RuntimeException();}});
 
         //---- label1 ----
         label1.setText("Chequeo");
@@ -159,73 +158,59 @@ public class InsertarMantenimiento extends JPanel {
         //---- textField2a ----
         textField2a.setEnabled(false);
 
-        //======== scrollPane1 ========
-        {
-            scrollPane1.setViewportView(table1);
-        }
-
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap(42, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(label1, GroupLayout.Alignment.TRAILING)
-                        .addComponent(label6, GroupLayout.Alignment.TRAILING))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(layout.createParallelGroup()
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(checkBox1))
-                    .addContainerGap(34, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(149, 149, 149)
-                    .addComponent(button1)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(81, 81, 81)
-                    .addComponent(label3)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(checkBox3)
-                    .addContainerGap(201, Short.MAX_VALUE))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(44, 44, 44)
+                    .addGap(16, 16, 16)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(label4)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(textField3a, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(label5)
-                                .addComponent(label2))
+                                .addComponent(label2)
+                                .addComponent(label6)
+                                .addComponent(label1))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup()
                                 .addComponent(checkBox2)
-                                .addComponent(textField2a, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(checkBox1))
+                            .addGap(126, 126, 126))
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 196, GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(label3)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(checkBox3))
+                            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label5)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(textField2a, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(label4)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup()
+                                        .addComponent(button1)
+                                        .addComponent(textField3a, GroupLayout.PREFERRED_SIZE, 202, GroupLayout.PREFERRED_SIZE))))))
                     .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(17, 17, 17)
+                    .addGap(21, 21, 21)
                     .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(checkBox1)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(9, 9, 9)
-                            .addComponent(label1)
-                            .addGap(18, 18, 18)
-                            .addComponent(label6)))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(label1)
+                        .addComponent(checkBox1))
+                    .addGap(15, 15, 15)
+                    .addGroup(layout.createParallelGroup()
+                        .addComponent(label6)
+                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                    .addGap(11, 11, 11)
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(checkBox2)
                         .addComponent(label2))
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(32, 32, 32)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(label5)
                         .addComponent(textField2a, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -237,15 +222,15 @@ public class InsertarMantenimiento extends JPanel {
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label4)
                         .addComponent(textField3a, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup()
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addComponent(button1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap())
+                    .addGap(35, 35, 35)
+                    .addComponent(button1)
+                    .addContainerGap(46, Short.MAX_VALUE))
         );
+
+        //======== scrollPane1 ========
+        {
+            scrollPane1.setViewportView(table1);
+        }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 

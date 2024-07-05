@@ -55,12 +55,11 @@ public class InsertarGanancias extends JPanel {
         textField5 = new JTextField();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
-        EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing
-        . border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ),
-        java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( )
-        { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .equals (e .getPropertyName () ))
-        throw new RuntimeException( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder( 0
+        , 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
+        , new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,
+         getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+        ) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //---- label1 ----
         label1.setText("Mes");
@@ -79,7 +78,7 @@ public class InsertarGanancias extends JPanel {
         label4.setText("Codigo de Salida");
 
         //---- label5 ----
-        label5.setText("precio");
+        label5.setText("Precio");
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
@@ -111,7 +110,7 @@ public class InsertarGanancias extends JPanel {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(155, 155, 155)
                             .addComponent(button1)))
-                    .addContainerGap(85, Short.MAX_VALUE))
+                    .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
