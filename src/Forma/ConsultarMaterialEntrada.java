@@ -27,13 +27,13 @@ public class ConsultarMaterialEntrada extends JPanel {
             Consultas4 objConsultas4 = new Consultas4();
             objConsultas4.setTitulo(new String[]{"Ubicacion", "Tipo de Entrada", "Fecha", "Horario de Entrada"});
             objConsultas4.setDatos(new String[]{
-                    "Ubicacion",
+                    "EntradaOrigen",
                     "EntradaTipo",
-                    "Fecha",
+                    "date",
                     "HorarioEntrada"});
             objConsultas4.setParametroString(
-                    "select Ubicacion, EntradaTipo, Fecha, HorarioEntrada from MaterialEntrada where Ubicacion = ? " +
-                            "or EntradaTipo = ? or Fecha = ? or HorarioEntrada = ? ");
+                    "select EntradaOrigen, EntradaTipo, date, HorarioEntrada from MaterialEntrada where EntradaOrigen = ? " +
+                            "or EntradaTipo = ? or date = ? or HorarioEntrada = ? ");
             objConsultas4.setParametro1(textField1.getText());
             objConsultas4.setParametro2(textField2.getText());
             objConsultas4.setParametro3(textField3.getText());

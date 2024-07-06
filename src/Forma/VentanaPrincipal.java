@@ -174,6 +174,14 @@ public class VentanaPrincipal extends JPanel {
         // TODO add your code here
     }
 
+    private void menuItem1(ActionEvent e) {
+        // TODO add your code here
+        JFrame frame = new JFrame("Consultar procesados");
+        frame.setContentPane(new ConsultarProcesados());
+        frame.setVisible(true);
+        frame.pack();
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -193,6 +201,7 @@ public class VentanaPrincipal extends JPanel {
         AMenuPiezas2 = new JMenuItem();
         AMenuEmpleado2 = new JMenuItem();
         menu1 = new JMenu();
+        menuItem1 = new JMenuItem();
         cMenuMaterial = new JMenuItem();
         cMenuMaterialSalida = new JMenuItem();
         cMenuMaquinas = new JMenuItem();
@@ -202,13 +211,13 @@ public class VentanaPrincipal extends JPanel {
         cMenuMantenimiento = new JMenuItem();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new
-        javax.swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDes\u0069gner \u0045valua\u0074ion",javax
-        .swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java
-        .awt.Font("D\u0069alog",java.awt.Font.BOLD,12),java.awt
-        .Color.red), getBorder())); addPropertyChangeListener(new java.beans.
-        PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062order".
-        equals(e.getPropertyName()))throw new RuntimeException();}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
+        javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax
+        . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
+        .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans.
+        PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .
+        equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== menuBar1 ========
         {
@@ -218,12 +227,12 @@ public class VentanaPrincipal extends JPanel {
                 menu3.setText("Insertar");
 
                 //---- IMenuMaterialEntrada ----
-                IMenuMaterialEntrada.setText("MaterialEntrada");
+                IMenuMaterialEntrada.setText("Material de Entrada");
                 IMenuMaterialEntrada.addActionListener(e -> IMenuMaterialEntrada(e));
                 menu3.add(IMenuMaterialEntrada);
 
                 //---- IMenuMaterialSalida ----
-                IMenuMaterialSalida.setText("MaterialSalida");
+                IMenuMaterialSalida.setText("Material de Salida");
                 IMenuMaterialSalida.addActionListener(e -> IMenuMaterialSalida(e));
                 menu3.add(IMenuMaterialSalida);
 
@@ -265,17 +274,26 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
-                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
+                AMenuGastos2.addActionListener(e -> {
+			IMenuGastos(e);
+			AMenuGastos2(e);
+		});
                 menu2.add(AMenuGastos2);
 
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
-                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
+                AMenuPiezas2.addActionListener(e -> {
+			iMenuPiezas(e);
+			AMenuPiezas2(e);
+		});
                 menu2.add(AMenuPiezas2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
-                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
+                AMenuEmpleado2.addActionListener(e -> {
+			iMenuEmpleado(e);
+			AMenuEmpleado2(e);
+		});
                 menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);
@@ -284,13 +302,21 @@ public class VentanaPrincipal extends JPanel {
             {
                 menu1.setText("Consultar");
 
+                //---- menuItem1 ----
+                menuItem1.setText("Procesados por sucursal");
+                menuItem1.addActionListener(e -> menuItem1(e));
+                menu1.add(menuItem1);
+
                 //---- cMenuMaterial ----
-                cMenuMaterial.setText("MaterialEntrada");
-                cMenuMaterial.addActionListener(e -> cMenuMaterial(e));
+                cMenuMaterial.setText("Material de Entrada");
+                cMenuMaterial.addActionListener(e -> {
+			menuItem4(e);
+			cMenuMaterial(e);
+		});
                 menu1.add(cMenuMaterial);
 
                 //---- cMenuMaterialSalida ----
-                cMenuMaterialSalida.setText("MaterialSalida");
+                cMenuMaterialSalida.setText("Material de Salida");
                 cMenuMaterialSalida.addActionListener(e -> cMenuMaterialSalida(e));
                 menu1.add(cMenuMaterialSalida);
 
@@ -358,6 +384,7 @@ public class VentanaPrincipal extends JPanel {
     private JMenuItem AMenuPiezas2;
     private JMenuItem AMenuEmpleado2;
     private JMenu menu1;
+    private JMenuItem menuItem1;
     private JMenuItem cMenuMaterial;
     private JMenuItem cMenuMaterialSalida;
     private JMenuItem cMenuMaquinas;

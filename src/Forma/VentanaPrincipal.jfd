@@ -15,12 +15,12 @@ new FormModel {
 					"text": "Insertar"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "IMenuMaterialEntrada"
-						"text": "MaterialEntrada"
+						"text": "Material de Entrada"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialEntrada", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "IMenuMaterialSalida"
-						"text": "MaterialSalida"
+						"text": "Material de Salida"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "IMenuMaterialSalida", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
@@ -80,14 +80,19 @@ new FormModel {
 					name: "menu1"
 					"text": "Consultar"
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem1"
+						"text": "Procesados por sucursal"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem1", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "cMenuMaterial"
-						"text": "MaterialEntrada"
+						"text": "Material de Entrada"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem4", true ) )
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cMenuMaterial", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
 						name: "cMenuMaterialSalida"
-						"text": "MaterialSalida"
+						"text": "Material de Salida"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cMenuMaterialSalida", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JMenuItem" ) {
