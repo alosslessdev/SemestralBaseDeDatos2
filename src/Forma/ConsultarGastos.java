@@ -37,10 +37,10 @@ public class ConsultarGastos extends JPanel {
                     "Año"});
             objConsultas2.setParametroString(
                     "select CodigoGasto, " +
-                            "EnergiaElectrica " +
-                            "Mantenimiento " +
-                            "IDGerente " +
-                            "Mes " +
+                            "EnergiaElectrica, " +
+                            "Mantenimiento, " +
+                            "IDGerente, " +
+                            "Mes, " +
                             "Año from Gastos where Mes = ? " +
                             "or Año = ?");
             objConsultas2.setParametro1(textField1.getText());
