@@ -64,7 +64,7 @@ BEGIN
     DECLARE @TotalGastos DECIMAL(10, 2);
     SELECT @TotalGastos = SUM(EnergiaElectrica + Mantenimiento)
     FROM Gastos
-    WHERE Gerente_ID = @GerenteID;
+    WHERE IDGerente = @GerenteID;
     RETURN @TotalGastos;
 END;
 go
@@ -76,12 +76,11 @@ CREATE PROCEDURE RegistrarMaterialEntrada
     @Tipo VARCHAR(50),
     @HorarioEntrada TIME,
     @Peso DECIMAL(10, 2),
-    @Origen VARCHAR(50),
-    @Proceso VARCHAR(50)
+    @Origen VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO MaterialEntrada (CodigoMaterial, Tipo, HorarioEntrada, Peso, Origen, Proceso)
-    VALUES (@CodigoMaterial, @Tipo, @HorarioEntrada, @Peso, @Origen, @Proceso);
+    INSERT INTO MaterialEntrada (CodigoMaterial, EntradaTipo, HorarioEntrada, EntradaPeso, EntradaOrigen)
+    VALUES (@CodigoMaterial, @Tipo, @HorarioEntrada, @Peso, @Origen);
 END;
 
 -- Procedimiento para registrar una nueva salida de material
@@ -96,7 +95,7 @@ BEGIN
     INSERT INTO MaterialSalida (CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
     VALUES (@CodigoMaterial, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
 END;
-
+go
 
 --procedimientos almacenados
 -- Procedimiento para registrar una nueva entrada de material
@@ -105,18 +104,17 @@ CREATE PROCEDURE sp_RegistrarMaterialEntrada
     @Tipo VARCHAR(50),
     @HorarioEntrada TIME,
     @Peso DECIMAL(10, 2),
-    @Origen VARCHAR(50),
-    @Proceso VARCHAR(50)
+    @Origen VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO MaterialEntrada (CodigoMaterial, Tipo, HorarioEntrada, Peso, Origen, Proceso)
-    VALUES (@CodigoMaterial, @Tipo, @HorarioEntrada, @Peso, @Origen, @Proceso);
+    INSERT INTO MaterialEntrada (CodigoMaterial, EntradaTipo, HorarioEntrada, EntradaPeso, EntradaOrigen)
+    VALUES (@CodigoMaterial, @Tipo, @HorarioEntrada, @Peso, @Origen);
 END;
 GO
 
 -- Procedimiento para registrar una nueva salida de material
 CREATE PROCEDURE sp_RegistrarMaterialSalida
-    @CodigoMaterial INT,
+    @CodigoSalida INT,
     @HorarioSalida TIME,
     @SalidaPeso DECIMAL(10, 2),
     @Ubicacion VARCHAR(50),
@@ -124,7 +122,7 @@ CREATE PROCEDURE sp_RegistrarMaterialSalida
 AS
 BEGIN
     INSERT INTO MaterialSalida (CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
-    VALUES (@CodigoMaterial, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
+    VALUES (@CodigoSalida, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
 END;
 GO
 
