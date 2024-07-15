@@ -1,4 +1,4 @@
-use my_database3a
+use EcoMundo
 go
 
 INSERT INTO "Sucursal" ("Ubicacion", "Contacto", "Telefono") VALUES
