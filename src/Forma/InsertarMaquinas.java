@@ -48,13 +48,12 @@ public class InsertarMaquinas extends JPanel {
         textField3 = new JTextField();
 
         //======== this ========
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
-        . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing
-        .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
-        Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
-        ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
-        public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName (
-        ) ) )throw new RuntimeException( ) ;} } );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
+        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax . swing
+        . border .TitledBorder . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,
+        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
+        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName () ) )
+        throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
         label1.setText("NombreMaquina");
@@ -64,10 +63,10 @@ public class InsertarMaquinas extends JPanel {
         button1.addActionListener(e -> button1(e));
 
         //---- label2 ----
-        label2.setText("text");
+        label2.setText("ID de gerente");
 
         //---- label3 ----
-        label3.setText("text");
+        label3.setText("ID de sucursal");
 
         GroupLayout layout = new GroupLayout(this);
         setLayout(layout);
@@ -85,7 +84,7 @@ public class InsertarMaquinas extends JPanel {
                         .addComponent(button1)
                         .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                         .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
-                    .addContainerGap(72, Short.MAX_VALUE))
+                    .addContainerGap(82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
@@ -104,7 +103,7 @@ public class InsertarMaquinas extends JPanel {
                         .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(27, 27, 27)
                     .addComponent(button1)
-                    .addContainerGap(75, Short.MAX_VALUE))
+                    .addContainerGap(115, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
