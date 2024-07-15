@@ -67,13 +67,12 @@ public class UpdateEmpleado extends JPanel {
         label9 = new JLabel();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax
-        .swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing
-        .border.TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.
-        Font("Dialo\u0067",java.awt.Font.BOLD,12),java.awt.Color.red
-        ), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override
-        public void propertyChange(java.beans.PropertyChangeEvent e){if("borde\u0072".equals(e.getPropertyName(
-        )))throw new RuntimeException();}});
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
+        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER ,javax . swing
+        . border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,
+        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
+        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )
+        throw new RuntimeException( ) ;} } );
 
         //---- label1 ----
         label1.setText("Nombre");
@@ -88,7 +87,7 @@ public class UpdateEmpleado extends JPanel {
         label4.setText("Identificacion");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Actualizar");
         button1.addActionListener(e -> button1(e));
 
         //---- label5 ----
@@ -113,7 +112,7 @@ public class UpdateEmpleado extends JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(157, 157, 157)
                     .addComponent(button1)
-                    .addContainerGap(177, Short.MAX_VALUE))
+                    .addContainerGap(188, Short.MAX_VALUE))
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                         .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -125,10 +124,10 @@ public class UpdateEmpleado extends JPanel {
                                 .addComponent(label4))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(layout.createParallelGroup()
-                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                                .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                                 .addComponent(textField3)
-                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)))
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
@@ -173,7 +172,7 @@ public class UpdateEmpleado extends JPanel {
                         .addComponent(textField4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addComponent(label9)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup()
                         .addComponent(label8)
                         .addComponent(textField5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))

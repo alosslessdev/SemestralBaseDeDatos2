@@ -66,12 +66,13 @@ public class UpdateGastos extends JPanel {
         textField10 = new JTextField();
 
         //======== this ========
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder
-        (0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing.border.TitledBorder.CENTER,javax.swing.border
-        .TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font.BOLD,12),java.awt
-        .Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void
-        propertyChange(java.beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName()))throw new RuntimeException()
-        ;}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
+        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder
+        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .
+        awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
+        ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+        ) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
+        ;
 
         //---- label4 ----
         label4.setText("IDGerente");
@@ -80,7 +81,7 @@ public class UpdateGastos extends JPanel {
         label5.setText("Mes");
 
         //---- button1 ----
-        button1.setText("Insertar");
+        button1.setText("Actualizar");
         button1.addActionListener(e -> button1(e));
 
         //---- label6 ----
@@ -123,10 +124,10 @@ public class UpdateGastos extends JPanel {
                                 .addComponent(label7))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup()
-                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)
-                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
+                                .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
+                                .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)))
                         .addGroup(layout.createSequentialGroup()
-                            .addContainerGap(80, Short.MAX_VALUE)
+                            .addContainerGap(86, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup()
                                 .addComponent(label4, GroupLayout.Alignment.TRAILING)
                                 .addComponent(label5, GroupLayout.Alignment.TRAILING))
@@ -218,7 +219,7 @@ public class UpdateGastos extends JPanel {
                         .addComponent(textField10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(button1)
-                    .addContainerGap(14, Short.MAX_VALUE))
+                    .addContainerGap(81, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
