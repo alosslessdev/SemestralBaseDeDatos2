@@ -15,6 +15,7 @@ public class Consultas1 {
 
     private String [] titulo;
     private String [] datos;
+    private String [] datosc = new String [8];
     private Vector<String> datosA = new Vector<>();
     private AppLogs objLogs = new AppLogs(Consultas1.class);
 
@@ -53,9 +54,9 @@ public class Consultas1 {
                         resultado.beforeFirst();
                         while(resultado.next()){
                             for(i=0;i<datos.length;i++) {
-                                datosA.add(resultado.getString(datos[i]));
+                                datosc[i] = resultado.getString(datos[i]);
                             }
-                            consulta.addRow(datosA);
+                            consulta.addRow(datosc);
 
                         }
                     }else{
