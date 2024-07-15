@@ -5,7 +5,7 @@ go
 create login UserTest with password = 'asdf';
 GO
 
-use my_database3b
+use EcoMundo
 GO
 create user entrypoint for login UserTest
 GO
