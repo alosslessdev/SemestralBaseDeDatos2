@@ -174,6 +174,10 @@ public class VentanaPrincipal extends JPanel {
         frame.pack();
     }
 
+    private void iMenuGanancias(ActionEvent e) {
+        // TODO add your code here
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
@@ -204,11 +208,11 @@ public class VentanaPrincipal extends JPanel {
 
         //======== this ========
         setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
-        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder
-        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog" ,java .
+        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder
+        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .
         awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
         ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
+        ) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
         ;
 
         //======== menuBar1 ========
@@ -266,26 +270,17 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
-                AMenuGastos2.addActionListener(e -> {
-			IMenuGastos(e);
-			AMenuGastos2(e);
-		});
+                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
                 menu2.add(AMenuGastos2);
 
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
-                AMenuPiezas2.addActionListener(e -> {
-			iMenuPiezas(e);
-			AMenuPiezas2(e);
-		});
+                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
                 menu2.add(AMenuPiezas2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
-                AMenuEmpleado2.addActionListener(e -> {
-			iMenuEmpleado(e);
-			AMenuEmpleado2(e);
-		});
+                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
                 menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);
