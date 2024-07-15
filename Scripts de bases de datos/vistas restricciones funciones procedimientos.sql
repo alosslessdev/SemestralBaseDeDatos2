@@ -82,6 +82,7 @@ BEGIN
     INSERT INTO MaterialEntrada (CodigoMaterial, EntradaTipo, HorarioEntrada, EntradaPeso, EntradaOrigen)
     VALUES (@CodigoMaterial, @Tipo, @HorarioEntrada, @Peso, @Origen);
 END;
+go
 
 -- Procedimiento para registrar una nueva salida de material
 CREATE PROCEDURE RegistrarMaterialSalida

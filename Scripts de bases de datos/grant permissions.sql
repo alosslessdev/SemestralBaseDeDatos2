@@ -39,6 +39,7 @@ grant select on Piezas to entrypoint
 grant select on ProcesoEntrada to entrypoint
 grant select on ProcesoSalida to entrypoint
 grant select on Sucursal to entrypoint
+grant select on DetallesMaterialesProcesados to entrypoint
 grant update on Cambios to entrypoint
 grant update on Chequeo to entrypoint
 grant update on Empleado to entrypoint
