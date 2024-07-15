@@ -187,7 +187,6 @@ public class VentanaPrincipal extends JPanel {
         IMenuMaterialEntrada = new JMenuItem();
         IMenuMaterialSalida = new JMenuItem();
         IMenuGastos = new JMenuItem();
-        iMenuGanancias = new JMenuItem();
         iMenuPiezas = new JMenuItem();
         iMenuMaquinas = new JMenuItem();
         iMenuMantenimiento = new JMenuItem();
@@ -207,13 +206,12 @@ public class VentanaPrincipal extends JPanel {
         cMenuMantenimiento = new JMenuItem();
 
         //======== this ========
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
-        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder
-        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .
-        awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
-        ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
-        ;
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing.
+        border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER
+        ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font
+        . BOLD ,12 ) ,java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener(
+        new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r"
+        .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
         //======== menuBar1 ========
         {
@@ -236,11 +234,6 @@ public class VentanaPrincipal extends JPanel {
                 IMenuGastos.setText("Gastos");
                 IMenuGastos.addActionListener(e -> IMenuGastos(e));
                 menu3.add(IMenuGastos);
-
-                //---- iMenuGanancias ----
-                iMenuGanancias.setText("Ganancias");
-                iMenuGanancias.addActionListener(e -> iMenuGanancias(e));
-                menu3.add(iMenuGanancias);
 
                 //---- iMenuPiezas ----
                 iMenuPiezas.setText("Piezas");
@@ -270,17 +263,26 @@ public class VentanaPrincipal extends JPanel {
 
                 //---- AMenuGastos2 ----
                 AMenuGastos2.setText("Gastos");
-                AMenuGastos2.addActionListener(e -> AMenuGastos2(e));
+                AMenuGastos2.addActionListener(e -> {
+			IMenuGastos(e);
+			AMenuGastos2(e);
+		});
                 menu2.add(AMenuGastos2);
 
                 //---- AMenuPiezas2 ----
                 AMenuPiezas2.setText("Piezas");
-                AMenuPiezas2.addActionListener(e -> AMenuPiezas2(e));
+                AMenuPiezas2.addActionListener(e -> {
+			iMenuPiezas(e);
+			AMenuPiezas2(e);
+		});
                 menu2.add(AMenuPiezas2);
 
                 //---- AMenuEmpleado2 ----
                 AMenuEmpleado2.setText("Empleado");
-                AMenuEmpleado2.addActionListener(e -> AMenuEmpleado2(e));
+                AMenuEmpleado2.addActionListener(e -> {
+			iMenuEmpleado(e);
+			AMenuEmpleado2(e);
+		});
                 menu2.add(AMenuEmpleado2);
             }
             menuBar1.add(menu2);
@@ -340,7 +342,7 @@ public class VentanaPrincipal extends JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(19, Short.MAX_VALUE)
+                    .addContainerGap(37, Short.MAX_VALUE)
                     .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                     .addGap(76, 76, 76))
         );
@@ -361,7 +363,6 @@ public class VentanaPrincipal extends JPanel {
     private JMenuItem IMenuMaterialEntrada;
     private JMenuItem IMenuMaterialSalida;
     private JMenuItem IMenuGastos;
-    private JMenuItem iMenuGanancias;
     private JMenuItem iMenuPiezas;
     private JMenuItem iMenuMaquinas;
     private JMenuItem iMenuMantenimiento;
