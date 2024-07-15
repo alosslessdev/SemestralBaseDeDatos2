@@ -112,7 +112,7 @@ public class VentanaPrincipal extends JPanel {
 
     private void IMenuMaterialEntrada(ActionEvent e) {
         // TODO add your code here
-        JFrame frame = new JFrame("Consultar Material de Entrada");
+        JFrame frame = new JFrame("Insertar Material de Entrada");
         frame.setContentPane(new InsertarMaterialEntrada());
         frame.setVisible(true);
         frame.pack();
