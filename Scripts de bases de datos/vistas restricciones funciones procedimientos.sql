@@ -29,27 +29,33 @@ GROUP BY CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo, Precio,
 	go
 	
 
--- Vista para obtener las ganancias y gastos por gerente
-CREATE VIEW VistaFinanzasGerente AS
-SELECT G.IDGerente, G.Cargo, GA.Mes, GA.Cantidad AS Ganancias, GTO.EnergiaElectrica, GTO.Mantenimiento
+-- Vista para obtener los gastos por gerente
+CREATE VIEW [dbo].[VistaFinanzasGerente] AS
+SELECT G.IDGerente, GTO.Mes, SUM(GTO.EnergiaElectrica) as EnergiaElectica, SUM(GTO.Mantenimiento) as Mantenimiento
 FROM Gerente G
-JOIN Ganancias GA ON G.IDGerente = GA.Gerente_ID
-JOIN Gastos GTO ON G.IDGerente = GTO.Gerente_ID;
-
+JOIN Gastos GTO ON G.IDGerente = GTO. IDGerente
+GROUP BY G.IDGerente, GTO.Mes;
+GO
 
 --funciones
--- Función para calcular el total de ganancias por gerente
-CREATE FUNCTION TotalGananciasGerente(@GerenteID INT)
-RETURNS DECIMAL(10, 2)
+-- Función para Obtener el Nombre Completo de un Empleado
+CREATE FUNCTION ObtenerNombreCompletoEmpleado(
+    @IDEmpleado INT
+)
+RETURNS VARCHAR(101)
 AS
 BEGIN
-    DECLARE @TotalGanancias DECIMAL(10, 2);
-    SELECT @TotalGanancias = SUM(Cantidad)
-    FROM Ganancias
-    WHERE Gerente_ID = @GerenteID;
-    RETURN @TotalGanancias;
-END;
+    DECLARE @NombreCompleto VARCHAR(101);
 
+    SELECT @NombreCompleto = Nombre + ' ' + Apellido
+    FROM Empleado
+    WHERE IDEmpleado = @IDEmpleado;
+
+    RETURN @NombreCompleto;
+END;
+GO
+
+go
 -- Función para calcular el total de gastos por gerente
 CREATE FUNCTION TotalGastosGerente(@GerenteID INT)
 RETURNS DECIMAL(10, 2)
@@ -61,6 +67,7 @@ BEGIN
     WHERE Gerente_ID = @GerenteID;
     RETURN @TotalGastos;
 END;
+go
 
 --procedimientos almacenados
 -- Procedimiento para registrar una nueva entrada de material
@@ -86,7 +93,7 @@ CREATE PROCEDURE RegistrarMaterialSalida
     @SalidaTipo VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO MaterialSalida (CodigoMaterial, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
+    INSERT INTO MaterialSalida (CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
     VALUES (@CodigoMaterial, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
 END;
 
@@ -116,7 +123,7 @@ CREATE PROCEDURE sp_RegistrarMaterialSalida
     @SalidaTipo VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO MaterialSalida (CodigoMaterial, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
+    INSERT INTO MaterialSalida (CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
     VALUES (@CodigoMaterial, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
 END;
 GO
@@ -125,7 +132,7 @@ GO
 --restricciones
 -- Restricción para asegurar que el peso del material de entrada sea positivo
 ALTER TABLE MaterialEntrada
-ADD CONSTRAINT CHK_PesoPositivo CHECK (Peso > 0);
+ADD CONSTRAINT CHK_PesoPositivo CHECK (EntradaPeso > 0);
 
 -- Restricción para asegurar que el peso del material de salida sea positivo
 ALTER TABLE MaterialSalida
@@ -134,15 +141,3 @@ ADD CONSTRAINT CHK_SalidaPesoPositivo CHECK (SalidaPeso > 0);
 -- Restricción para asegurar que las fechas de mantenimiento sean válidas
 ALTER TABLE Mantenimiento
 ADD CONSTRAINT CHK_FechaMantenimiento CHECK (JornadaMantenimiento <= GETDATE());
-
--- Consultar las vistas
-SELECT * FROM VistaMaterialesSucursal;
-SELECT * FROM VistaFinanzasGerente;
-
--- Ejecutar funciones
-SELECT dbo.TotalGananciasGerente(1) AS TotalGanancias;
-SELECT dbo.TotalGastosGerente(1) AS TotalGastos;
-
--- Ejecutar procedimientos almacenados
-EXEC RegistrarMaterialEntrada 2, 'Metal', '09:00:00', 200.00, 'Industrial', 'Procesado';
-EXEC RegistrarMaterialSalida 2, '13:00:00', 195.00, 'Centro de Reciclaje', 'Metal';
