@@ -49,7 +49,7 @@ BEGIN
     WHERE Gerente_ID = @GerenteID;
     RETURN @TotalGanancias;
 END;
-
+go
 -- Función para calcular el total de gastos por gerente
 CREATE FUNCTION TotalGastosGerente(@GerenteID INT)
 RETURNS DECIMAL(10, 2)
@@ -116,7 +116,7 @@ CREATE PROCEDURE sp_RegistrarMaterialSalida
     @SalidaTipo VARCHAR(50)
 AS
 BEGIN
-    INSERT INTO MaterialSalida (CodigoMaterial, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
+    INSERT INTO MaterialSalida (CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo)
     VALUES (@CodigoMaterial, @HorarioSalida, @SalidaPeso, @Ubicacion, @SalidaTipo);
 END;
 GO
@@ -125,7 +125,7 @@ GO
 --restricciones
 -- Restricción para asegurar que el peso del material de entrada sea positivo
 ALTER TABLE MaterialEntrada
-ADD CONSTRAINT CHK_PesoPositivo CHECK (Peso > 0);
+ADD CONSTRAINT CHK_PesoPositivo CHECK (EntradaPeso > 0);
 
 -- Restricción para asegurar que el peso del material de salida sea positivo
 ALTER TABLE MaterialSalida
