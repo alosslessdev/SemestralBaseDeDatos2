@@ -108,7 +108,7 @@ CREATE TABLE "MantenimientoCambios"(
 ALTER TABLE
     "MantenimientoCambios" ADD CONSTRAINT "mantenimientocambios_id_primary" PRIMARY KEY("id");
 CREATE TABLE "Gerente"(
-    "IDGerente" INT IDENTITY(1, 1) NOT NULL,
+    "IDGerente" INT IDENTITY(1, 1) NOT NULL UNIQUE,
     "IDSucursal" INT NULL,
     "IDEmpleado" INT NULL
 );
