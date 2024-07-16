@@ -46,7 +46,6 @@ public class ConsultarProcesados extends JPanel {
                             "GROUP BY CodigoSalida, HorarioSalida, SalidaPeso, Ubicacion, SalidaTipo, " +
                             "Precio, Fecha, IDSucursal");
             objConsultas1.setParametro1(textField4.getText());
-
             table1.setModel(objConsultas1.consultas());
         }else{
             //impresionDialogo("El campo esta en blanco", "Sin datos", 1);

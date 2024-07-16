@@ -15,7 +15,7 @@ public class Consultas1 {
 
     private String [] titulo;
     private String [] datos;
-    private String [] datosc = new String [8];
+    private String [] datosc;
     private Vector<String> datosA = new Vector<>();
     private AppLogs objLogs = new AppLogs(Consultas1.class);
 
@@ -31,7 +31,6 @@ public class Consultas1 {
     public void setParametroString(String parametroString) {
         this.parametroString = parametroString;
     }
-
 
     public DefaultTableModel consultas() {
         String[] tituloLocal = titulo;
@@ -49,6 +48,7 @@ public class Consultas1 {
                 pst.setString(1, parametro1);
                 try(ResultSet resultado = pst.executeQuery()){
                     resultado.last();
+                    datosc = new String [datos.length];
                     int filas = resultado.getRow();
                     if (filas > 0) {
                         resultado.beforeFirst();
